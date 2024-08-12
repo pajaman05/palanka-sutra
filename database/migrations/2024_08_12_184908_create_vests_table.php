@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Validation\Rules\Unique;
 
 return new class extends Migration
 {
@@ -12,6 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Create 'users' table first
+        Schema::create('users', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->string('tip', 100);
+            $table->boolean('active');
+        });
+
+        // Create 'kategorijas' table
+        Schema::create('kategorijas', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->string("slug")->unique();
+            $table->text('opis');
+        });
+
+        // Create 'vests' table
         Schema::create('vests', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
@@ -22,11 +38,31 @@ return new class extends Migration
             $table->text('sadrzaj');
             $table->string('image_thumbnail', 200);
             $table->string('image_full', 200);
-            $table->unsignedInteger('kategorija_id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedBigInteger('kategorija_id');  // Change to unsignedBigInteger
+            $table->unsignedBigInteger('user_id');        // Change to unsignedBigInteger
             $table->boolean('published');
             $table->boolean('accepted')->nullable();
             $table->foreign('kategorija_id')->references('id')->on('kategorijas');
+            $table->foreign('user_id')->references('id')->on('users');
+        });
+
+        // Create 'komentars' table
+        Schema::create('komentars', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->text('sadrzaj');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('vest_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('vest_id')->references('id')->on('vests');
+        });
+
+        // Create 'diskusijas' table
+        Schema::create('diskusijas', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->text('sadrzaj');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
@@ -36,6 +72,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('komentars');
         Schema::dropIfExists('vests');
+        Schema::dropIfExists('diskusijas');
+        Schema::dropIfExists('kategorijas');
+        Schema::dropIfExists('users');
     }
 };
