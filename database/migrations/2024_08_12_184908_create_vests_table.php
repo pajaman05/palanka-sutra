@@ -11,14 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Create 'users' table first
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string('tip', 100);
-            $table->boolean('active');
-        });
-
         // Create 'kategorijas' table
         Schema::create('kategorijas', function (Blueprint $table) {
             $table->id();
@@ -50,6 +42,7 @@ return new class extends Migration
         Schema::create('komentars', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->date('datum');
             $table->text('sadrzaj');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('vest_id');
@@ -61,6 +54,7 @@ return new class extends Migration
         Schema::create('diskusijas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->date('datum');
             $table->text('sadrzaj');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
