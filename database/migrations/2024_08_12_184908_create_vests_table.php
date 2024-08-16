@@ -15,6 +15,7 @@ return new class extends Migration
         Schema::create('kategorijas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('naziv', 200);
             $table->string("slug")->unique();
             $table->text('opis');
         });
