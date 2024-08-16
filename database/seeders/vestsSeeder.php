@@ -29,6 +29,7 @@ class vestsSeeder extends Seeder
             'published' => true,
             'accepted' => true,
             ],
+
             [ 
                 'naslov' => "Da li nova prodavnica proteinska pića ima veze sa nestancima pasa?",
                 'slug' => "vest-13082024-1",
@@ -42,6 +43,7 @@ class vestsSeeder extends Seeder
                 'published' => true,
                 'accepted' => true,
             ],
+
             [
                 'naslov' => "Hakovan bioskop u sred emotivoanja dečijeg filma! Roditelji žele novac nazad!",
                 'slug' => "vest-13082024-2",
@@ -55,6 +57,7 @@ class vestsSeeder extends Seeder
                 'published' => true,
                 'accepted' => true,
             ],
+            
             [
                 'naslov' => "Otvoren novi lokal za druzenje i pomoć starijim ljudima!",
                 'slug' => "vest-14082024-1",
