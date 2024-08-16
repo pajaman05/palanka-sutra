@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class KategorijasSeeder extends Seeder
 {
@@ -14,7 +15,7 @@ class KategorijasSeeder extends Seeder
      
     public function run(): void
     {
-        DB::table('')->insert([ //dati ime tabeli
+        DB::table('kategorijas')->insert([ //dati ime tabeli
             'naziv' => 'Prav kategorija', //String
             'slug' => 'prva-kategorija', //text
             'opis' => 'Ovo je uvodni tekst prve kategorije koji moye da sadri <b>html </b>', //String
