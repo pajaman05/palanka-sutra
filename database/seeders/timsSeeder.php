@@ -15,25 +15,35 @@ class timsSeeder extends Seeder
     public function run(): void
     {
         DB::table('tims')->insert([
-            'naziv' => "Petar Prvulović",
-            'opis' => "",
-            'slika' => "",
-        ],[   
-            'naziv' => "Pavle Milošević",
-            'opis' => "",
-            'slika' => "",
-        ],[   
-            'naziv' => "Aleksandar Dunjić",
-            'opis' => "",
-            'slika' => "",
-        ],[   
-            'naziv' => "Mirko Mileusnić",
-            'opis' => "",
-            'slika' => "",
-        ],[   
-            'naziv' => "Mladen Vulićević",
-            'opis' => "",
-            'slika' => "",
+            [
+                'naziv' => "Petar Prvulović",
+                'opis' => "",
+                'slika' => "",
+            ],
+
+            [   
+                'naziv' => "Pavle Milošević",
+                'opis' => "",
+                'slika' => "",
+            ],
+
+            [   
+                'naziv' => "Aleksandar Dunjić",
+                'opis' => "",
+                'slika' => "",
+            ],
+
+            [   
+                'naziv' => "Mirko Mileusnić",
+                'opis' => "",
+                'slika' => "",
+            ],
+            
+            [   
+                'naziv' => "Mladen Vulićević",
+                'opis' => "",
+                'slika' => "",
+            ]
         ]);
     }
 }

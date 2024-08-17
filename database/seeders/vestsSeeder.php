@@ -15,7 +15,7 @@ class vestsSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('vests')->insert(
+        DB::table('vests')->insert([
             [
             'naslov' => "Muškarci se sada identifikuju kao žene u teretani zbog povoljnije mesečne članarine!",
             'slug' => "vest-12082024-1",
@@ -29,7 +29,6 @@ class vestsSeeder extends Seeder
             'published' => true,
             'accepted' => true,
             ],
-
             [ 
                 'naslov' => "Da li nova prodavnica proteinska pića ima veze sa nestancima pasa?",
                 'slug' => "vest-13082024-1",
@@ -43,7 +42,6 @@ class vestsSeeder extends Seeder
                 'published' => true,
                 'accepted' => true,
             ],
-
             [
                 'naslov' => "Hakovan bioskop u sred emotivoanja dečijeg filma! Roditelji žele novac nazad!",
                 'slug' => "vest-13082024-2",
@@ -57,7 +55,6 @@ class vestsSeeder extends Seeder
                 'published' => true,
                 'accepted' => true,
             ],
-            
             [
                 'naslov' => "Otvoren novi lokal za druzenje i pomoć starijim ljudima!",
                 'slug' => "vest-14082024-1",
@@ -67,9 +64,10 @@ class vestsSeeder extends Seeder
                 'image_thumbnail' => "https://st2.depositphotos.com/1594308/12211/i/450/depositphotos_122113342-stock-photo-friendly-seniors-holding-by-hands.jpg",
                 'image_full' => "https://impeccabuild.com.au/wp-content/uploads/2020/08/Cafe-Theme-Ideas-Vintage-Cafe-Fitout-ImpeccaBuild-2-scaled.jpg",
                 'kategorija_id' => 4,
-                'user_id' => 4,
+                'user_id' => 1,
                 'published' => true,
                 'accepted' => true,
-            ]);  
+            ]
+        ]);  
     }
 }
