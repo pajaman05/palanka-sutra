@@ -16,6 +16,7 @@ class vestsSeeder extends Seeder
     public function run(): void
     {
         DB::table('vests')->insert([
+            [
             'naslov' => "Muškarci se sada identifikuju kao žene u teretani zbog povoljnije mesečne članarine!",
             'slug' => "vest-12082024-1",
             'datum' => "12.08.2024.",
@@ -30,7 +31,7 @@ class vestsSeeder extends Seeder
         ],[ 
             'naslov' => "Da li nova prodavnica proteinska pića ima veze sa nestancima pasa?",
             'slug' => "vest-13082024-1",
-            'datum' => "13.08.2024.",
+            'datum' => now()->toDateString(),
             'sazetak' => "Prodaja proteinskih pića je značajno napredovala proteklih godina, baš tako je napredovao i broj uličnih pasa. Stanovnici su krenuli da primećuju razliku u broju pasa lutalica, a postoji i teorija da je za to kriva nova prodavnica koja proizvodi proteinske napitke zvana WoofShakes.",
             'sadrzaj' => " Otvorena 18. aprila ove godine, prodavnica proteinskih napitaka 'WoofShakes' brzo je postala glavna tema u lokalnoj zajednici zbog svog popularnog proizvoda koji sadrži 70 grama proteina u boci od 0,5 litara, dok se istovremeno hvali niskom kalorijskom vrednošću. Međutim, s rastom popularnosti ove prodavnice, stanovnici su primetili dramatičan pad u broju uličnih pasa u gradu. Mnogi su počeli da povezuju nestanak pasa s otvaranjem 'WoofShakes', a teorija je da prodavnica možda ima nekakvu vezu sa nestankom ovih životinja. Pre nego što su se preselili u Smederevsku Palanku, 'WoofShakes' je bio prisutan u Velikoj Plani, gde je situacija bila slična - ulični psi su nestali nakon otvaranja i zatvaranja prodavnice. Iako glasine sugerišu da bi psi mogli biti povezani s proizvodima 'WoofShakes', predstavnici prodavnice odlučili su da se oglase kako bi razjasnili situaciju. 'Mi nemamo nikakve veze sa nestankom pasa; to je čista slučajnost. Naziv 'WoofShakes' je inspirisan idejom da će ljudi biti željni naših proizvoda kao psi, a ne zato što su proizvodi napravljeni od pasa,' izjavio je jedan od radnika. Kupci prodavnice su ignorisali glasine i naglasili da im je najvažnije to što su proizvodi ukusni, bogati proteinima i povoljni. 'Ne zanima nas da li su pravljeni od kučetine ili od banana. Ukusni su, imaju puno proteina i nisu skupi,' rekli su kupci. Iako još uvek nije potvrđeno da li konzumiranje napitaka iz 'WoofShakes' može štetiti zdravlju, stručnjaci savetuju oprez dok se glasine ne rasvetle. Problematika ostaje otvorena, a lokalna zajednica se i dalje bavi pitanjem da li je ova prodavnica na neki način povezana sa nestankom uličnih pasa. ",
             'image_thumbnail' => "https://img.freepik.com/premium-vector/muscular-cartoon-dog-with-protein-shake-illustration_770200-3141.jpg",
@@ -42,7 +43,7 @@ class vestsSeeder extends Seeder
         ],[
             'naslov' => "Hakovan bioskop u sred emotivoanja dečijeg filma! Roditelji žele novac nazad!",
             'slug' => "vest-13082024-2",
-            'datum' => "13.08.2024.",
+            'datum' => now()->toDateString(),
             'sazetak' => "Deca i njihovi roditelji ostavljeni u šoku nakon što se na projekcionom platnu pojavila strašna slika u sred emitovanja dečijeg filma 'U mojoj glavi 2'.",
             'sadrzaj' => "Danas, oko 18 časova, emitovan je dečiji film 'U mojoj glavi 2' u bioskopu u Smederevskoj Palanci. Karte su se vrlo brzo rasprodale, i čitav bioskop bio je preplavljen decom i njihovim roditeljima. Nešto što je počelo kao smešan film o malim ljudima koji upravljaju emocijama tinejdžerke u njenoj glavi pretvorilo se u horor kada je, nakon 45 minuta emitovanja, platno iznenada ugašeno i mrak je preplavio čitavu prostoriju. Svi su bili uvereni da je u pitanju samo privremeni kvar i da će se veseli animirani film uskoro ponovo pojaviti na ekranu, ali kada se platno ponovo uključilo, svi su bili zaprepašćeni. Strašni fiktivni lik poznat kao 'Jeff the Killer' pojavio se preko celog ekrana dok su zvuci vriskova izlazili iz zvučnika. Ceo bioskop je brzo preplavio teror dok su roditelji pokušavali da što brže izađu iz bioskopa sa svojom decom. Nijedno dete nije fizički povređeno, ali smo sigurni da će ovaj prizor ostaviti mentalne posledice na njih duži period. Radnici bioskopa su vratili novac svim posetiocima, ali roditelji su odlučili da podnesu tužbu protiv bioskopa. Radnici bioskopa su potvrdili da niko od njih nije učestvovao u incidentu i da se ne radi o nekoj bolesnoj šali već o nepoznatom hakeru. Policija trenutno obavlja istragu da bi pronašla osobu odgovornu za ovo delo.",
             'image_thumbnail' => "https://wp.scoopwhoop.com/wp-content/uploads/2016/06/5773d112fb778573224eb1b3_506526827.jpg",
@@ -54,7 +55,7 @@ class vestsSeeder extends Seeder
         ],[
             'naslov' => "Otvoren novi lokal za druzenje i pomoć starijim ljudima!",
             'slug' => "vest-14082024-1",
-            'datum' => "14.08.2024.",
+            'datum' => now()->toDateString(),
             'sazetak' => "'Vremeplovac' je novi lokal koji je posvećen starijoj populaciji. U vremeplovcu će vas udariti nostalgija i osetićete se ponovo mladim. Kod nas se pušta tradicionalna muzika, konzumira tradicionalna hrana i piju samo najbolja pića.",
             'sadrzaj' => "Moderni kafići i restorani nisu toliko privlačni starijoj publici koliko su zanimljivi mlađim generacijama. Da li ste starija osoba i osećate se kao da ne znate gde da odete? Ako je odgovor da, onda je 'Vremeplovac' savršena destinacija za vas. 'Vremeplovac' je dizajniran da se svidi starijoj populaciji svojim starinskim izgledom i vedrim raspoloženjem. U 'Vremeplovcu' se pušta samo stara srpska muzika koja će vas vratiti u stare dane i naterati da đuskate, jedete samo pravu domaću hranu i pijete samo tradicionalna pića. Pored restorana, u 'Vremeplovcu' možete očekivati i mnoge dodatne usluge, kao što su fizioterapeuti koji će vam pomoći sa bolovima, lekari sa kojima se možete posavetovati i bašta u kojoj možete uživati u toplom đakuziju. Svake subote se održavaju zanimljivi izlasci na koje se možete prijaviti i tokom kojih ćete obići najlepša mesta Srbije koja interesuju stariju populaciju. Ukratko, 'Vremeplovac' je mesto gde možete provoditi svoje slobodno vreme, družiti se i osećati se ponovo mladim.",
             'image_thumbnail' => "https://st2.depositphotos.com/1594308/12211/i/450/depositphotos_122113342-stock-photo-friendly-seniors-holding-by-hands.jpg",
@@ -63,6 +64,6 @@ class vestsSeeder extends Seeder
             'user_id' => 4,
             'published' => true,
             'accepted' => true,
-        ]);  
+        ]]);  
     }
 }
