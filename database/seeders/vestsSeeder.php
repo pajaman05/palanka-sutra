@@ -19,7 +19,7 @@ class vestsSeeder extends Seeder
             [
             'naslov' => "Muškarci se sada identifikuju kao žene u teretani zbog povoljnije mesečne članarine!",
             'slug' => "vest-12082024-1",
-            'datum' => "12.08.2024.",
+            'datum' => now()->toDateString(),
             'sazetak' => "Da li mislite da je fer da žene imaju jeftiniji pristup teretani? U poslednjih par dana se pojavio izrečit skok u broju muškaraca koji bi rekao da nije i time nastajanje komplesknog problema koji se dotiče pitanja rodnog identiteta i antidiskriminacionih politika.",
             'sadrzaj' => "'Stalno krše zakon o zabrani diskriminacije!', govori jedan od mladića. 'Prvo diskriminišu muškarce s većim cenama, a onda diskriminišu transrodne muškarce tako što ih ne priznaju kao žene. Sramota!' Kada smo pitali žene zašto misle da njihove članarine treba biti jeftinije, dobili smo razne odgovore, ali većina žena se složila da su one manje zahtevne u teretani u poređenju s muškarcima. Provode tamo znatno manje vremena i zauzimaju manje opreme i tegova, pa samim tim prave manju gužvu. Muškarci koji treniraju su se složili da, iako većina žena zaista tamo ne zauzima istu količinu tegova kao oni, podjednako prave gužvu zauzimajući puno prostora sa strunjačama i provodeći dugo vremena za mašinama bez deljenja. Čak i ako žene zaista zauzimaju manje prostora i prave manju gužvu, većina se slaže da cene ne bi trebalo da se menjaju po pretpostavci koliko će neko biti zahtevan, jer bi tada trebalo da cene budu jeftinije, na primer, za početnike i starije ljude koji će takođe potencijalno provoditi manje vremena tamo i koristiti manje opreme od iskusnijih članova. Kako god, ovaj problem deluje kao da ne može da se reši jednostavnom 'Ko je u pravu' raspravom. Istraženo je da je ovog meseca broj članarina opao za 40% u poređenju s prošlim mesecom, a čak 60% u poređenju s ovim istim mesecom prošle godine. Ne samo da teretanu napuštaju muškarci, već i žene! 'Ne mogu više da idem u ženski WC bez da ne naiđem na muškarca koji tera neki inat', govori jedan ženski član. 'Svaki put kada uđem u salu, osećam se kao da svi žele da me udave zbog stvari na koje ja nisam uticala', govori druga. Pored gubitka članova, postoje i pretnje pravnim akcijama zbog diskriminacije. Ono što je na početku izgledalo kao šala, sada se pretvara u problem, ali sve više izgleda kao da će njegovo rešenje ići u korist muških članova.",
             'image_thumbnail' => "https://www.bodybuilding.com/images/2021/june/janae-marie-kroc-is-always-in-training-1-700xh.jpg",
@@ -61,7 +61,7 @@ class vestsSeeder extends Seeder
             'image_thumbnail' => "https://st2.depositphotos.com/1594308/12211/i/450/depositphotos_122113342-stock-photo-friendly-seniors-holding-by-hands.jpg",
             'image_full' => "https://impeccabuild.com.au/wp-content/uploads/2020/08/Cafe-Theme-Ideas-Vintage-Cafe-Fitout-ImpeccaBuild-2-scaled.jpg",
             'kategorija_id' => 4,
-            'user_id' => 4,
+            'user_id' => 3,
             'published' => true,
             'accepted' => true,
         ]]);  
