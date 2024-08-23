@@ -26,11 +26,12 @@ require __DIR__.'/auth.php';
 
 //DUNJIC RUTE ZA KONTROLERE
 
-//Route::get('/', [VestController::class, 'homepage'])->name('homepage');
+Route::get('/', [VestController::class, 'homepage'])->name('homepage');
 
 
 Route::get('/kategorije', [KategorijaController::class, 'kategorije'])->name('kategorija.list');
-//Route::get('/kategorija/{slug}', [KategorijaController::class, 'kategorija'])->name('kategorija.single');
+
+Route::get('/kategorija/{slug}', [KategorijaController::class, 'kategorija'])->name('kategorija.single');
 
 
 Route::get('/kategorija/{id}', [KategorijaController::class, 'kategorijaById'])
