@@ -33,14 +33,14 @@ Route::get('/kategorije', [KategorijaController::class, 'kategorije'])->name('ka
 //Route::get('/kategorija/{slug}', [KategorijaController::class, 'kategorija'])->name('kategorija.single');
 
 
+Route::get('/kategorija/{id}', [KategorijaController::class, 'kategorijaById'])
+    ->where('id', '[0-9]+')
+    ->name('kategorija.single.by.id');
+
 Route::get('/kategorija/{slug}', [KategorijaController::class, 'kategorija'])
     ->where('slug', '[a-zA-Z0-9-]+')
     ->name('kategorija.single');
 
-
-Route::get('/kategorija/{id}', [KategorijaController::class, 'kategorijaById'])
-    ->where('id', '[0-9]+')
-    ->name('kategorija.single.by.id');
 
 
 Route::get('/vest/{slug}', [VestController::class, 'vest'])->name('vest.single');
