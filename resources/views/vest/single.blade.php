@@ -4,13 +4,13 @@
     <!-- Trending Tittle -->
     <div class="about-right mb-90">
         <div class="about-img">
-            <img src="assets/img/trending/trending_top.jpg" alt="">
+            <img src="{{$vest->image_full}}" alt="">
         </div>
         <div class="heading-news mb-30 pt-30">
-            {{$vest -> naslov}}
+            {{$vest->naslov}}
         </div>
         <div class="about-prea">
-            {{$vest -> sadrzaj}}
+            {{$vest->sadrzaj}}
         </div> 
         <div class="social-share pt-30">
             <div class="section-tittle">
@@ -55,53 +55,53 @@
             </div>
         </form>
     </div>
-</div>
+    </div>
 @endsection
 
 @section('sidebar')
-<!-- Flow Socail -->
-<div class="single-follow mb-45">
-    <div class="single-box">
-        <div class="follow-us d-flex align-items-center">
-            <div class="follow-social">
-                <a href="#"><img src="assets/img/news/icon-fb.png" alt=""></a>
-            </div>
-            <div class="follow-count">  
-                <span>8,045</span>
-                <p>Fans</p>
-            </div>
-        </div> 
-        <div class="follow-us d-flex align-items-center">
-            <div class="follow-social">
-                <a href="#"><img src="assets/img/news/icon-tw.png" alt=""></a>
-            </div>
-            <div class="follow-count">
-                <span>8,045</span>
-                <p>Fans</p>
-            </div>
-        </div>
+    <!-- Flow Socail -->
+    <div class="single-follow mb-45">
+        <div class="single-box">
             <div class="follow-us d-flex align-items-center">
-            <div class="follow-social">
-                <a href="#"><img src="assets/img/news/icon-ins.png" alt=""></a>
+                <div class="follow-social">
+                    <a href="#"><img src="assets/img/news/icon-fb.png" alt=""></a>
+                </div>
+                <div class="follow-count">  
+                    <span>8,045</span>
+                    <p>Fans</p>
+                </div>
+            </div> 
+            <div class="follow-us d-flex align-items-center">
+                <div class="follow-social">
+                    <a href="#"><img src="assets/img/news/icon-tw.png" alt=""></a>
+                </div>
+                <div class="follow-count">
+                    <span>8,045</span>
+                    <p>Fans</p>
+                </div>
             </div>
-            <div class="follow-count">
-                <span>8,045</span>
-                <p>Fans</p>
+                <div class="follow-us d-flex align-items-center">
+                <div class="follow-social">
+                    <a href="#"><img src="assets/img/news/icon-ins.png" alt=""></a>
+                </div>
+                <div class="follow-count">
+                    <span>8,045</span>
+                    <p>Fans</p>
+                </div>
             </div>
-        </div>
-        <div class="follow-us d-flex align-items-center">
-            <div class="follow-social">
-                <a href="#"><img src="assets/img/news/icon-yo.png" alt=""></a>
-            </div>
-            <div class="follow-count">
-                <span>8,045</span>
-                <p>Fans</p>
+            <div class="follow-us d-flex align-items-center">
+                <div class="follow-social">
+                    <a href="#"><img src="assets/img/news/icon-yo.png" alt=""></a>
+                </div>
+                <div class="follow-count">
+                    <span>8,045</span>
+                    <p>Fans</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- New Poster -->
-<div class="news-poster d-none d-lg-block">
-    <img src="assets/img/news/news_card.jpg" alt="">
-</div>
+    <!-- New Poster -->
+    <div class="news-poster d-none d-lg-block">
+        <img src="assets/img/news/news_card.jpg" alt="">
+    </div>
 @endsection
