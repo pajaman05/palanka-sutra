@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KategorijaController;
+use App\Http\Controllers\VestController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,3 +20,28 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+
+
+//DUNJIC RUTE ZA KONTROLERE
+
+Route::get('/', [VestController::class, 'homepage'])->name('homepage');
+
+
+Route::get('/kategorije', [KategorijaController::class, 'kategorije'])->name('kategorija.list');
+
+Route::get('/kategorija/{slug}', [KategorijaController::class, 'kategorija'])->name('kategorija.single');
+
+
+Route::get('/kategorija/{slug}', [KategorijaController::class, 'kategorija'])
+    ->where('slug', '[a-zA-Z0-9-]+')
+    ->name('kategorija.single');
+
+
+Route::get('/kategorija/{id}', [KategorijaController::class, 'kategorijaById'])
+    ->where('id', '[0-9]+')
+    ->name('kategorija.single.by.id');
+
+
+Route::get('/vest/{slug}', [VestController::class, 'vest'])->name('vest.single');

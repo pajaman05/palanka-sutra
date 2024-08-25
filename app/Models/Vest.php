@@ -28,13 +28,13 @@ class Vest extends Model
     public function status()
     {
         if ($this->published && $this->accepted) {
-            return 'Publishovana';
+            return 'published';
         } elseif (!$this->published && $this->accepted) {
-            return 'Ceka da bude publishovana'; // čeka da je moderator objavi
+            return 'unpublished';
         } elseif (!$this->published && !$this->accepted) {
-            return 'Odbijena';
+            return 'rejected';
         } else {
-            return 'Na cekanju';
+            return 'pending';
         }
     }
 }
