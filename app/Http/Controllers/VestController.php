@@ -15,12 +15,23 @@ class VestController extends Controller
 {
     public function homepage()
     {
+        // Prikupi najnovije vesti
         $vests = Vest::latest()->take(10)->get();
+
+        // Prikupi dve nasumične vesti
+        $randomVesti = Vest::inRandomOrder()->take(2)->get();
+
+        // Prikupi sve kategorije
         $kategorije = Kategorija::all();
-        
-        // Salje podatke za najnovije vesti i kategorije na pocetnu
-        return view('homepage', ['vesti' => $vests, 'kategorije' => $kategorije]);
+
+        // Prosledi sve podatke u view
+        return view('homepage', [
+            'vesti' => $vests,
+            'randomVesti' => $randomVesti,
+            'kategorije' => $kategorije
+        ]);
     }
+
    
     public function vest($slug)
     {

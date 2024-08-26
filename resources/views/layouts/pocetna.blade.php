@@ -30,7 +30,7 @@
                             @yield('trending')
                         </div>
                         <div class="col-lg-4">
-                            @yield('trending-sidebar')
+                            @yield('trending-sidebar-2')
                         </div>
                     </div>
                 </div>
