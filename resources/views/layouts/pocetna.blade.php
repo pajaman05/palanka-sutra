@@ -143,6 +143,7 @@
             </div>
             <!-- banner-last End -->
         </main>
+        @include('layouts.moj-template.partials.footer')
         @include('layouts.moj-template.partials.js-scripts')
     </body>
 </html>
