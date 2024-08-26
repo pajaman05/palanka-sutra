@@ -16,8 +16,10 @@ class VestController extends Controller
     public function homepage()
     {
         $vests = Vest::latest()->take(10)->get();
-
-        return view('homepage', ['najnovije-vesti' => $vests]);
+        $kategorije = Kategorija::all();
+        
+        // Salje podatke za najnovije vesti i kategorije na pocetnu
+        return view('homepage', ['vesti' => $vests, 'kategorije' => $kategorije]);
     }
    
     public function vest($slug)
