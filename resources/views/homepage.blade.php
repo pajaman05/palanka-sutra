@@ -1,29 +1,56 @@
-@extends('layout.pocetna')
+@extends('layouts.pocetna')
 
 @section('trending-slider')
     <div class="slider-active">
-        @foreach($vesti as $vest)
-            <!-- Single -->
-            <div class="single-slider">
-                <div class="trending-top mb-30">
-                    <div class="trend-top-img">
-                        <img src="{{$vest->image_thumbnail}}" alt="">
-                        <div class="trend-top-cap">
-                            <span class="bgr" data-animation="fadeInUp" data-delay=".2s" data-duration="1000ms">
-                                </span>
-                            <h2><a href="latest_news.html" data-animation="fadeInUp"data-delay=".4s" data-duration="1000ms">
-                                {{$vest->naslov}}</a></h2>
-                            <p data-animation="fadeInUp" data-delay=".6s" data-duration="1000ms">
-                                {{$vest->datum}}</p>
+            @foreach($vesti as $vest)
+                <!-- Single -->
+                <div class="single-slider">
+                    <div class="trending-top mb-30">
+                        <div class="trend-top-img">
+                            <img src="{{$vest->image_thumbnail}}" alt="">
+                            <div class="trend-top-cap">
+                                <span class="bgr" data-animation="fadeInUp" data-delay=".2s" data-duration="1000ms">
+                                    </span>
+                                <h2><a href="latest_news.html" data-animation="fadeInUp"data-delay=".4s" data-duration="1000ms">
+                                    {{$vest->naslov}}</a></h2>
+                                <p data-animation="fadeInUp" data-delay=".6s" data-duration="1000ms">
+                                    {{$vest->datum}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
     </div>
 @endsection
 
 @section('trending-sidebar')
+    <div class="row">
+        <div class="col-lg-12 col-md-6 col-sm-6">
+            <div class="trending-top mb-30">
+                <div class="trend-top-img">
+                    <img src="assets/img/trending/trending_top3.jpg" alt="">
+                    <div class="trend-top-cap trend-top-cap2">
+                        <span class="bgb">FASHION</span>
+                        <h2><a href="latest_news.html">Secretart for Economic Air
+                            plane that looks like</a></h2>
+                        <p>by Alice cloe   -   Jun 19, 2020</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-6 col-sm-6">
+            <div class="trending-top mb-30">
+                <div class="trend-top-img">
+                    <img src="assets/img/trending/trending_top4.jpg" alt="">
+                    <div class="trend-top-cap trend-top-cap2">
+                        <span class="bgg">TECH </span>
+                        <h2><a href="latest_news.html">Secretart for Economic Air plane that looks like</a></h2>
+                        <p>by Alice cloe   -   Jun 19, 2020</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('trending')
@@ -41,9 +68,10 @@
                 <nav>                                                 
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         @foreach($kategorije as $kategorija)
-                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab"
-                         href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
-                            {{$kategorija -> naziv}}</a>
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab"
+                            href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
+                                {{$kategorija -> naziv}}</a>
+                        @endforeach
                     </div>
                 </nav>
                 <!--End Nav Button  -->
@@ -424,12 +452,4 @@
         </div>
     </div>
 </div>
-@endsection
-
-@section('trending')
-    
-@endsection
-
-@section('trending')
-    
 @endsection
