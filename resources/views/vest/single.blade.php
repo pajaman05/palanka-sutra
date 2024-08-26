@@ -10,7 +10,7 @@
             {{$vest->naslov}}
         </div>
         <div class="about-prea">
-            {{$vest->sadrzaj}}
+            {!!$vest->sadrzaj!!}
         </div> 
         <div class="social-share pt-30">
             <div class="section-tittle">
