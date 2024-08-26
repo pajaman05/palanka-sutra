@@ -1,4 +1,6 @@
-@extends('layouts.app')
+
+
+@extends('layouts.kategorijaCore.katTemplate')
 
 @section('content')
     <h1>Lista kategorija</h1>

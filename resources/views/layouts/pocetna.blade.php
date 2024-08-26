@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
-    @include('moj-template.partials.head')
+    @include('layouts.moj-template.partials.head')
     <body>
-        @include('moj-template.partials.preloader')
-        @include('moj-template.partials.header')
+        @include('layouts.moj-template.partials.preloader')
+        @include('layouts.moj-template.partials.header')
         <main>
             <!-- Trending Area Start -->
             <div class="trending-area fix pt-25 gray-bg">
@@ -143,6 +143,6 @@
             </div>
             <!-- banner-last End -->
         </main>
-        @include('moj-template.partials.js-scripts')
+        @include('layouts.moj-template.partials.js-scripts')
     </body>
 </html>

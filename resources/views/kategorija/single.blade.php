@@ -1,4 +1,6 @@
-@extends('layouts.app')
+
+@extends('layouts.kategorijaCore.katTemplate')
+
 
 @section('content')
     <h1>{{ $kategorija->naziv }}</h1>
@@ -6,7 +8,7 @@
 
     <h2>Vesti u ovoj kategoriji:</h2>
     <ul>
-        @foreach($vesti as $vest)
+        @foreach($kategorija->vesti as $vest)
             <li>
                 <h3>{{ $vest->naslov }}</h3>
                 <img src="{{ $vest->image_thumbnail }}" alt="{{ $vest->naslov }}">
