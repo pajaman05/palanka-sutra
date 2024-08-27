@@ -73,7 +73,7 @@
                         <!-- section Tittle -->
                         <div class="row">
                             <div class="col-lg-12">
-                                @yield('section-title-2')
+                                @yield('section-title-3')
                             </div>
                         </div>
                         <div class="row">
