@@ -6,7 +6,17 @@
                 <div class="container">
                     <div class="col-xl-12">
                         <div class="row d-flex justify-content-between align-items-center">
-                            @yield('header-info') <!-- trending title etc. -->
+                            <div class="header-info-left">
+                                <ul>     
+                                    <li class="title"><span class="flaticon-energy"></span> trending-title</li>
+                                    <li>@yield('header-info')</li>
+                                </ul>
+                            </div>
+                            <div class="header-info-right">
+                                <ul class="header-date">
+                                    <li><span class="flaticon-calendar"></span> +880166 253 232</li>
+                                </ul>
+                            </div> <!-- trending title etc. -->
                         </div>
                     </div>
                 </div>
