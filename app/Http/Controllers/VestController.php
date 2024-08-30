@@ -47,4 +47,8 @@ class VestController extends Controller
         // Prikaz view-a sa pronađenom vešću
         return view('vest.single', ['vest' => $vest]);
     }
+
+    public function novaVest(){}
+
+    public function unosVesti(){}
 }

@@ -43,3 +43,9 @@ Route::get('/kategorija/{slug}', [KategorijaController::class, 'kategorija'])
 
 
 Route::get('/vest/{slug}', [VestController::class, 'vest'])->name('vest.single');
+
+//Mladen :3
+
+Route::get('/vest/create', [VestsController::class, 'novaVest'])->name('vest.create');
+
+Route::post('/vest/insert', [VestsController::class, 'unosVest'])->name('vest.insert');
