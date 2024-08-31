@@ -51,6 +51,7 @@
                     </ul>
                 </li>
                 <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="{{route('vest.create')}}">Create New Vest</a>
             </ul>
         </nav>
     </div>
