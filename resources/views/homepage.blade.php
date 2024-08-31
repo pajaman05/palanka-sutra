@@ -1,17 +1,7 @@
 @extends('layouts.pocetna')
 
 @section('header-info')
-    <div class="header-info-left">
-        <ul>     
-            <li class="title"><span class="flaticon-energy"></span> trending-title</li>
-            <li>{{$randomVesti[0]->naslov}}</li>
-        </ul>
-    </div>
-    <div class="header-info-right">
-        <ul class="header-date">
-            <li><span class="flaticon-calendar"></span> +880166 253 232</li>
-        </ul>
-    </div>
+    {{$randomVesti[0]->naslov}}
 @endsection
 
 @section('logo-banner')

@@ -1,4 +1,4 @@
-@extends('layouts.vest-single')
+@extends('layouts.sidebar-right')
 
 @section('content')
     <!-- Trending Tittle -->
