@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -43,5 +44,16 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    //metode za bazu vesti i komentare
+    public function mojeVesti()
+    {
+        return $this->hasMany(Vest::class);
+    }
+
+    public function mojiKomentari()
+    {
+        return $this->hasMany(Komentar::class);
     }
 }
