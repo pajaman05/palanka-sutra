@@ -46,6 +46,6 @@ Route::get('/vest/{slug}', [VestController::class, 'vest'])->name('vest.single')
 
 //Mladen :3
 
-Route::get('/vest/create', [VestsController::class, 'novaVest'])->name('vest.create');
+Route::get('/vest/create', [VestController::class, 'novaVest'])->name('vest.create');
 
-Route::post('/vest/insert', [VestsController::class, 'unosVest'])->name('vest.insert');
+Route::post('/vest/insert', [VestController::class, 'unosVest'])->name('vest.insert');
