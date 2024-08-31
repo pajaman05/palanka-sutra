@@ -33,18 +33,17 @@ class VestController extends Controller
     }
 
    
-    public function vest($slug)
-    {
-        // Proveri da li je slug broj (integer)
-        if (is_numeric($slug)) {
-            // Ako je broj, koristi find() za pretragu po ID-u
-            $vest = Vest::findOrFail($slug);
-        } else {
-            // Ako nije broj, koristi slug za pretragu
-            $vest = Vest::where('slug', $slug)->firstOrFail();
-        }
 
-        // Prikaz view-a sa pronađenom vešću
-        return view('vest.single', ['vest' => $vest]);
-    }
+    public function vest($slug){
+        $vest = Vest::where('slug', $slug)->firstOrFail();
+        return view('vest.single', [ 'vest'=>$vest ]);
+      }
+
+
+
+      public function vestById($id)
+        {
+            $vest = Vest::findOrFail($id);
+            return redirect()->route('vest.single', ['slug' => $vest->slug]);
+        }
 }
