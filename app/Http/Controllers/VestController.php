@@ -34,6 +34,9 @@ class VestController extends Controller
 
    
 
+
+    
+
     public function vest($slug){
         $vest = Vest::where('slug', $slug)->firstOrFail();
         return view('vest.single', [ 'vest'=>$vest ]);
@@ -46,4 +49,8 @@ class VestController extends Controller
             $vest = Vest::findOrFail($id);
             return redirect()->route('vest.single', ['slug' => $vest->slug]);
         }
+
+    public function novaVest(){}
+
+    public function unosVesti(){}
 }

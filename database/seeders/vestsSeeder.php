@@ -18,7 +18,7 @@ class vestsSeeder extends Seeder
         DB::table('vests')->insert([
             [
             'naslov' => "Muškarci se sada identifikuju kao žene u teretani zbog povoljnije mesečne članarine!",
-            'slug' => "muskarci-postaju-zene-teretana",
+            'slug' => "teretana-muskarci-postaju-zene",
             'datum' => now()->toDateString(),
             'sazetak' => "Da li mislite da je fer da žene imaju jeftiniji pristup teretani? U poslednjih par dana se pojavio izrečit skok u broju muškaraca koji bi rekao da nije i time nastajanje komplesknog problema koji se dotiče pitanja rodnog identiteta i antidiskriminacionih politika.",
             'sadrzaj' => "<p><em>'Stalno krše zakon o zabrani diskriminacije!'</em>, govori jedan od mladića. <em>'Prvo diskriminišu muškarce s većim cenama, a onda diskriminišu transrodne muškarce tako što ih ne priznaju kao žene. Sramota!'</em></p>
@@ -96,9 +96,46 @@ class vestsSeeder extends Seeder
             'image_thumbnail' => "https://media.istockphoto.com/id/127825118/photo/people-cleaning-up-litter-on-grass.jpg?s=612x612&w=0&k=20&c=NErcXJmnVXJClBZ19NTFzrbuQwnk4l99evhXwebAiZs=",
             'image_full' => "https://img.freepik.com/premium-photo/recycle-waste-litter-rubbish-garbage-trash-junk-clean-training-nature-cleaning-volunteer-ecology-green-conceptenvironment-plastic-pollution_1212-7586.jpg",
             'kategorija_id' => 3,
-            'user_id' => 3,
+            'user_id' => 2,
             'published' => true,
             'accepted' => true,
+        ],[
+            'naslov' => "Znakotron je napravio novi najveći napad! Podli buntovnik ponovo prkosi saobraćaju.",
+            'slug' => "znakotron-1",
+            'datum' => now()->toDateString(),
+            'sazetak' => "Poznati neprijatelj saobraćaja, serijski lopurda uličnih znakov, poznat kao Znakotron je ponovo napravio kriminalno delo, veće od svih prethodnih, ali ovaj put oktriva motive iza svojih dela!",
+            'sadrzaj' => "<p><em>'Tinejdžeri rade te stvari, ne moramo mi ništa da radimo, kazniće ih roditelji',</em> policija je mislila kada je prvi put nestao <strong>rdjavi</strong> ulični znak u blizini kiseljaka. Taj znak je bio dovoljno <strong>rdjav</strong> i star da vozačima nije bilo ni prepoznatljivo šta je signalirao. Ljudi su se složili da osoba koja ga je ukrala samo učinila uslugu saobraćaju, međutim to je bio samo početak ovog <strong>misterioznog</strong> stranca.</p>
+                        <p>Brzo nakon nestanka prvog znaka, krenuli su da nestaju i drugi ulični znakovi, ovaj put i oni koji su bili funkcionalni i potrebni vozačima. Osoba koja je krala znakove je za sobom ostavljala grafite sa natpisom <strong>'ZNAKOTRON JE BIO OVDE'</strong>. Kada je policija pokušala da pristupi uličnim kamerama, bila je šokirana otkrićem da ova nova ličnost nije nekakav amater, već <strong>profesionalac</strong>. Svi sačuvani video zapisi kamera su bili nedostupni i izbrisani, dok komšiluk i ljudi u prolazu nisu ništa zapazili.</p>
+                        <p>Vrlo brzo, Znakotron je postao <strong>legenda</strong> grada. Svi su želeli da saznaju ko je on, zašto baš krade ulične znakove i kako ga još niko nije provalio. Sa tolikom popularnošću dobio je i svoje fanove koji su želeli da budu kao i on. Deca širom grada su krenula da kradu ulične znakove i vandalizuju grad kao i on. Neki su se pretvarali da jesu Znakotron dok su drugi pokušavali da kreiraju svoju ličnost sa drugim imenom.</p>
+                        <p>Znakotronu se nisu svideli <strong>imitatori</strong> i <strong>kompeticija</strong>, pa je otkrio identitet od svih ljudi koji su pokušavali da igraju njegovu igru i poslao anonimno policiji sa porukom <strong>'JA SAM JEDAN, JA SAM NEZAMENJIV, JA SAM DEMON SAOBRAĆAJA'</strong>. Svi ljudi koji su pokušali da budu kao Znakotron su primili posledice, osim samog Znakotrona. Sada su se svi plašili ovog čoveka. Niko nije znao šta im može uraditi. Policija je davala sve od sebe, ali izgledalo je kao da je beznadežno.</p>
+                        <p>Znakotron nije mogao biti zaustavljen, a jučerašnji dan to samo još više potvrđuje. U periodu između ponoći i 4 ujutru ukradeni su svi semafori kod raskrsnice ispred maksija. Ceo svet je u potpunoj konfuziji! Kako je neko mogao da ukrade 10 semafora u jednoj noći na glavnoj ulici i da ga niko ne uhvati niti primeti?!</p>
+                        <p>Na mestu zločina, Znakotron je ostavio poruku u kojoj upozorava svet da je ovo samo početak i da neće da prestane sa njegovim zločinom dok ljudi ne prestanu da manje voze svoja kola i ne krenu više da pešače i koriste gradski prevoz. Kada je ova poruka bila objavljena, reakcije ljudi su bile masivno podeljene. Neki vide Znakotrona kao samozvanog pravdoljubca koji se na kreativni način bori da postigne nešto dobro, dok ga ostali vide kao sebičnog <strong>manijaka</strong> koji ne razume koliko je transport automobilom bitan ljudima.</p>
+                        <p>Ono što je sigurno, jeste da je Znakotronov identitet još uvek nepoznat i da on neće stati, ono što nije sigurno je to koliko će on daleko dogurati dok ne dobije ono što želi.</em></p>",
+            'image_thumbnail' => "https://wpcdn.us-east-1.vip.tn-cloud.net/www.41nbc.com/content/uploads/2021/02/sign-one-scaled.jpg",
+            'image_full' => "https://content.api.news/v3/images/bin/9b2c6f4f112a771e8139fb58a044c44d",
+            'kategorija_id' => 3,
+            'user_id' => 2,
+            'published' => true,
+            'accepted' => true,
+
+        ],[
+            'naslov' => "Znakotron je ponovo u akciji i ovaj put nije samo gradsko vlasništvo u opasnosti!",
+            'slug' => "znakotron-2",
+            'datum' => now()->toDateString(),
+            'sazetak' => "Demon saobraćaja poznat kao Znakotron nam je dokazao da njegova nedavna zlodela mogu da budu nadmašena kada je od sinoć krenuo da prkosi i nedužnim gradjanima.",
+            'sadrzaj' => "<p><em>Poslednji put kada se govorilo o Znakotronu bilo je kada je misteriozno ukrao sve semafore iz centra grada.</em> Svi su bili uvereni da tako nešto ne može da bude nadmašeno do juče.</p>
+                        <p>Već smo upoznati sa time da je motiv Znakotrona da smanji gužvu u saobraćaju i da podstakne ljude da se okrenu gradskom prevozu i pešačenju. Do skoro, svi su bili uvereni da je to nemoguće postići, čak i od strane njega. Kako god, već danas ova uverenja bivaju srušena.</p>
+                        <p>Ovog popodneva, gužva u saobraćaju je manja za 80% u poređenju sa prošlim ponedeljkom u istim časovima. Za ovo je odgovoran Znakotron koji je juče prevazišao sebe više nego ikada.</p>
+                        <p>Šta je to toliko loše mogao da uradi da natera ljude da ne sednu u sopstvena kola i da se odvezu do posla, pitate se? Odgovor je: Da im polupa ta kola!</p>
+                        <p>Juče je preko 200 građana prijavilo policiji da su im kola teško oštećena, a 100 ljudi je prijavilo da su im kola u potpunosti <strong>NESTALA!</strong> Ako je Znakotron u sposobnosti da uradi nešto ovako, ko zna na šta je sve ostalo spreman.</p>
+                        <p>Informacije o identitetu su još uvek nepoznate.</em></p>",
+            'image_thumbnail' => "https://live.staticflickr.com/5637/20643271324_db1f31129a_b.jpg",
+            'image_full' => "https://e3.365dm.com/23/12/1600x900/skynews-car-wreck-essex_6395693.jpg?20231217100949",
+            'kategorija_id' => 3,
+            'user_id' => 2,
+            'published' => true,
+            'accepted' => true,
+
         ]]);  
     }
 }

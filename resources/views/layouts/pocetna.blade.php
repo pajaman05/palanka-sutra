@@ -73,7 +73,7 @@
                         <!-- section Tittle -->
                         <div class="row">
                             <div class="col-lg-12">
-                                @yield('section-title-2')
+                                @yield('section-title-3')
                             </div>
                         </div>
                         <div class="row">
@@ -143,6 +143,7 @@
             </div>
             <!-- banner-last End -->
         </main>
+        @include('layouts.moj-template.partials.footer')
         @include('layouts.moj-template.partials.js-scripts')
     </body>
 </html>

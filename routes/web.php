@@ -38,8 +38,18 @@ Route::get('/kategorija/{slug}', [KategorijaController::class, 'kategorija'])
 
 
 
+
 Route::get('/vest/{id}', [VestController::class, 'vestById'])
     ->where('id', '[0-9]+')
     ->name('vest.singleById');
 Route::get('/vest/{slug}', [VestController::class, 'vest'])
     ->name('vest.single');
+
+// Route::get('/vest/{slug}', [VestController::class, 'vest'])->name('vest.single');
+
+//Mladen :3
+
+Route::get('/vest/create', [VestController::class, 'novaVest'])->name('vest.create');
+
+Route::post('/vest/insert', [VestController::class, 'unosVest'])->name('vest.insert');
+
