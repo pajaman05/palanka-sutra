@@ -47,9 +47,13 @@ Route::get('/vest/{slug}', [VestController::class, 'vest'])
 
 // Route::get('/vest/{slug}', [VestController::class, 'vest'])->name('vest.single');
 
-//Mladen :3
 
 Route::get('/vest/create', [VestController::class, 'novaVest'])->name('vest.create');
 
+
 Route::post('/vest/insert', [VestController::class, 'unosVest'])->name('vest.insert');
+
+
+// mladenov insert smatra drugacijim iz nekog razloga??
+// Route::post('/vest/insert', [VestController::class, 'unosVest'])->name('vest.insert');
 
