@@ -33,6 +33,7 @@ class vestsSeeder extends Seeder
             'user_id' => 3,
             'published' => true,
             'accepted' => true,
+            `hits` => 0,
         ],[ 
             'naslov' => "Da li nova prodavnica proteinska pića ima veze sa nestancima pasa?",
             'slug' => "psi-postaju-proteini",
@@ -50,6 +51,7 @@ class vestsSeeder extends Seeder
             'user_id' => 3,
             'published' => true,
             'accepted' => true,
+            `hits` => 0,
         ],[
             'naslov' => "Hakovan bioskop u sred emotivoanja dečijeg filma! Roditelji žele novac nazad!",
             'slug' => "jumpscare-bioskop",
@@ -66,6 +68,7 @@ class vestsSeeder extends Seeder
             'user_id' => 2,
             'published' => true,
             'accepted' => true,
+            `hits` => 0,
         ],[
             'naslov' => "Otvoren novi lokal za druzenje i pomoć starijim ljudima!",
             'slug' => "lokal-za-stare",
@@ -82,6 +85,7 @@ class vestsSeeder extends Seeder
             'user_id' => 3,
             'published' => true,
             'accepted' => true,
+            `hits` => 0,
         ],[
             'naslov' => "Takmičanje u skupljanju smeća! ",
             'slug' => "ocisti-grad", 
@@ -99,6 +103,7 @@ class vestsSeeder extends Seeder
             'user_id' => 3,
             'published' => true,
             'accepted' => true,
+            `hits` => 0,
         ]]);  
     }
 }

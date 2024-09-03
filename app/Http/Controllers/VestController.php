@@ -47,4 +47,12 @@ class VestController extends Controller
         // Prikaz view-a sa pronađenom vešću
         return view('vest.single', ['vest' => $vest]);
     }
+
+    //Counter za hitove
+    function single($id){
+        $vest = Vest::find($id);
+        $vest->hits = $vest->hits+1;
+        $vest->save();
+        return view('vesti.single', ['v' => $vest]);
+        }
 }
