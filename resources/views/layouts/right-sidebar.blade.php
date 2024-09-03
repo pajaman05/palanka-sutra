@@ -19,6 +19,7 @@
                                 <div class="col-12">
                                     <div class="tab-content" id="nav-tabContent">
                                         @yield('vesti')
+                                        @yield('komentari')
                                         @yield('komentar_forma')
                                     </div>
                                 </div>

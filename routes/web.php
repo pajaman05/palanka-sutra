@@ -39,13 +39,12 @@ Route::get('/kategorija/{slug}', [KategorijaController::class, 'kategorija'])
 
 
 
-Route::get('/vest/{id}', [VestController::class, 'vestById'])
-    ->where('id', '[0-9]+')
-    ->name('vest.singleById');
-Route::get('/vest/{slug}', [VestController::class, 'vest'])
-    ->name('vest.single');
 
-// Route::get('/vest/{slug}', [VestController::class, 'vest'])->name('vest.single');
+
+
+Route::post('/komentar/{vest_id}', [VestController::class, 'unesiKomentar'])->name('komentar.unesi');
+
+
 
 
 Route::get('/vest/create', [VestController::class, 'novaVest'])->name('vest.create');
@@ -57,3 +56,8 @@ Route::post('/vest/insert', [VestController::class, 'unosVest'])->name('vest.ins
 // mladenov insert smatra drugacijim iz nekog razloga??
 // Route::post('/vest/insert', [VestController::class, 'unosVest'])->name('vest.insert');
 
+Route::get('/vest/{id}', [VestController::class, 'vestById'])
+    ->where('id', '[0-9]+')
+    ->name('vest.singleById');
+Route::get('/vest/{slug}', [VestController::class, 'vest'])
+    ->name('vest.single');
