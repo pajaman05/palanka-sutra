@@ -45,7 +45,7 @@ Route::get('/kategorija/{slug}', [KategorijaController::class, 'kategorija'])
 
 Route::post('/komentar/{vest_id}', [VestController::class, 'unesiKomentar'])->name('komentar.unesi');
 
-
+Route::get('/tim', [TimController::class, 'tim'])->name('tim');
 
 
 Route::get('/vest/create', [VestController::class, 'novaVest'])->name('vest.create');

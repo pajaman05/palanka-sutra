@@ -29,13 +29,13 @@ class vestsSeeder extends Seeder
                         <p>Kako god, ovaj problem deluje kao da ne može da se reši jednostavnom <em>'Ko je u pravu'</em> raspravom. Istraženo je da je ovog meseca broj članarina opao za **40%** u poređenju s prošlim mesecom, a čak **60%** u poređenju s ovim istim mesecom prošle godine. Ne samo da teretanu napuštaju muškarci, već i žene!</p>
                         <p><em>'Ne mogu više da idem u ženski WC bez da ne naiđem na muškarca koji tera neki inat'</em>, govori jedan ženski član. <em>'Svaki put kada uđem u salu, osećam se kao da svi žele da me udave zbog stvari na koje ja nisam uticala'</em>, govori druga.</p>
                         <p>Pored gubitka članova, postoje i pretnje pravnim akcijama zbog diskriminacije. Ono što je na početku izgledalo kao šala, sada se pretvara u problem, ali sve više izgleda kao da će njegovo rešenje ići u korist muških članova.</p>",
-            'image_thumbnail' => "public/slike/vest-1-thumbnail.PNG",
-            'image_full' => "public/slike/vest-1-full.PNG",
+            'image_thumbnail' => "slike/vest-1-thumbnail.PNG",
+            'image_full' => "slike/vest-1-full.PNG",
             'kategorija_id' => 1,
             'user_id' => 3,
             'published' => true,
             'accepted' => true,
-            `hits` => 0,
+            //`hits` => 0,
         ],[ 
             'naslov' => "Da li nova prodavnica proteinska pića ima veze sa nestancima pasa?",
             'slug' => "psi-postaju-proteini",
@@ -47,13 +47,13 @@ class vestsSeeder extends Seeder
                         <p>Iako glasine sugerišu da bi psi mogli biti povezani s proizvodima <em>'WoofShakes'</em>, predstavnici prodavnice odlučili su da se oglase kako bi razjasnili situaciju. <em>'Mi nemamo nikakve veze sa nestankom pasa; to je čista slučajnost. Naziv 'WoofShakes' je inspirisan idejom da će ljudi biti željni naših proizvoda kao psi, a ne zato što su proizvodi napravljeni od pasa,'</em> izjavio je jedan od radnika.</p>
                         <p>Kupci prodavnice su ignorisali glasine i naglasili da im je najvažnije to što su proizvodi **ukusni**, **bogati proteinima** i **povoljni**. <em>'Ne zanima nas da li su pravljeni od kučetine ili od banana. Ukusni su, imaju puno proteina i nisu skupi,'</em> rekli su kupci.</p>
                         <p>Iako još uvek nije potvrđeno da li konzumiranje napitaka iz <em>'WoofShakes'</em> može štetiti zdravlju, stručnjaci savetuju **oprez** dok se glasine ne rasvetle. Problematika ostaje otvorena, a lokalna zajednica se i dalje bavi pitanjem da li je ova prodavnica na neki način povezana sa nestankom uličnih pasa.</p>",
-            'image_thumbnail' => "public/slike/vest-2-thumb.PNG",
-            'image_full' => "public/slike/vest-2-full.PNG",
+            'image_thumbnail' => "slike/vest-2-thumb.PNG",
+            'image_full' => "slike/vest-2-full.PNG",
             'kategorija_id' => 2,
             'user_id' => 3,
             'published' => true,
             'accepted' => true,
-            `hits` => 0,
+            //`hits` => 0,
         ],[
             'naslov' => "Hakovan bioskop u sred emotivoanja dečijeg filma! Roditelji žele novac nazad!",
             'slug' => "jumpscare-bioskop",
@@ -64,13 +64,13 @@ class vestsSeeder extends Seeder
                         <p>Svi su bili uvereni da je u pitanju samo privremeni kvar i da će se veseli animirani film uskoro ponovo pojaviti na ekranu, ali kada se platno ponovo uključilo, svi su bili zaprepašćeni. Strašni fiktivni lik poznat kao <em>'Jeff the Killer'</em> pojavio se preko celog ekrana dok su zvuci vriskova izlazili iz zvučnika.</p>
                         <p>Ceo bioskop je brzo preplavio **teror** dok su roditelji pokušavali da što brže izađu iz bioskopa sa svojom decom. Nijedno dete nije fizički povređeno, ali smo sigurni da će ovaj prizor ostaviti **mentalne posledice** na njih duži period.</p>
                         <p>Radnici bioskopa su vratili novac svim posetiocima, ali roditelji su odlučili da podnesu **tužbu** protiv bioskopa. Radnici bioskopa su potvrdili da niko od njih nije učestvovao u incidentu i da se ne radi o nekoj bolesnoj šali već o **nepoznatom hakeru**. Policija trenutno obavlja **istragu** da bi pronašla osobu odgovornu za ovo delo.</p>",
-            'image_thumbnail' => "public/slike/vest-3-thumb.PNG",
-            'image_full' => "public/slike/vest-3-full.PNG",
+            'image_thumbnail' => "slike/vest-3-thumb.PNG",
+            'image_full' => "slike/vest-3-full.PNG",
             'kategorija_id' => 3,
             'user_id' => 2,
             'published' => true,
             'accepted' => true,
-            `hits` => 0,
+            //`hits` => 0,
         ],[
             'naslov' => "Otvoren novi lokal za druzenje i pomoć starijim ljudima!",
             'slug' => "lokal-za-stare",
@@ -81,13 +81,13 @@ class vestsSeeder extends Seeder
                         <p>Pored restorana, u <em>'Vremeplovcu'</em> možete očekivati i mnoge dodatne usluge, kao što su **fizioterapeuti** koji će vam pomoći sa bolovima, **lekari** sa kojima se možete posavetovati i **bašta** u kojoj možete uživati u toplom **đakuziju**.</p>
                         <p>Svake subote se održavaju **zanimljivi izlasci** na koje se možete prijaviti i tokom kojih ćete obići **najlepša mesta Srbije** koja interesuju stariju populaciju.</p>
                         <p>Ukratko, <em>'Vremeplovac'</em> je mesto gde možete provoditi svoje slobodno vreme, družiti se i osećati se ponovo mladim.</p>",
-            'image_thumbnail' => "public/slike/vest-4-thumb.PNG",
-            'image_full' => "public/slike/vest-4-full.PNG",
+            'image_thumbnail' => "slike/vest-4-thumb.PNG",
+            'image_full' => "slike/vest-4-full.PNG",
             'kategorija_id' => 4,
             'user_id' => 3,
             'published' => true,
             'accepted' => true,
-            `hits` => 0,
+            //`hits` => 0,
         ],[
             'naslov' => "Takmičanje u skupljanju smeća! ",
             'slug' => "ocisti-grad", 
@@ -99,8 +99,8 @@ class vestsSeeder extends Seeder
                         <p>Radi prevencije kršenja pravila, <strong>đubretari</strong> će pokupiti svo smeće iz uličnih kontejnera i kanta tokom noći i pred samim takmičenjem tako da će svo nađeno smeće zaista biti samo ono koje zagađuje grad.</p>
                         <p>Takmičenje će trajati od <strong>8:00 do 17:00</strong>, sa pauzom od <strong>12:00 do 13:00</strong> tokom koje će svi takmičari uživati u besplatnoj hrani i piću. U <strong>18:00</strong> biće proglašeni pobednici i dodeljene nagrade. Svima je dozvoljen pristup posmatranju takmičenja, ali je strogo zabranjeno pomagati nekom timu ako niste prijavljeni kandidat.</p>
                         <p>Cilj ovog takmičenja je da se ljudi druže dok rade nešto dobro za svoje okruženje. Ukoliko imate malo slobodnog vremena i želite da pomognete da vaš grad bude čistiji, prijavite se da učestvujete.</p>",
-            'image_thumbnail' => "public/slike/vest-5-thumb.PNG",
-            'image_full' => "public/slike/vest-5-full.PNG",
+            'image_thumbnail' => "slike/vest-5-thumb.PNG",
+            'image_full' => "slike/vest-5-full.PNG",
             'kategorija_id' => 3,
             'user_id' => 2,
             'published' => true,
@@ -117,8 +117,8 @@ class vestsSeeder extends Seeder
                         <p>Znakotron nije mogao biti zaustavljen, a jučerašnji dan to samo još više potvrđuje. U periodu između ponoći i 4 ujutru ukradeni su svi semafori kod raskrsnice ispred maksija. Ceo svet je u potpunoj konfuziji! Kako je neko mogao da ukrade 10 semafora u jednoj noći na glavnoj ulici i da ga niko ne uhvati niti primeti?!</p>
                         <p>Na mestu zločina, Znakotron je ostavio poruku u kojoj upozorava svet da je ovo samo početak i da neće da prestane sa njegovim zločinom dok ljudi ne prestanu da manje voze svoja kola i ne krenu više da pešače i koriste gradski prevoz. Kada je ova poruka bila objavljena, reakcije ljudi su bile masivno podeljene. Neki vide Znakotrona kao samozvanog pravdoljubca koji se na kreativni način bori da postigne nešto dobro, dok ga ostali vide kao sebičnog <strong>manijaka</strong> koji ne razume koliko je transport automobilom bitan ljudima.</p>
                         <p>Ono što je sigurno, jeste da je Znakotronov identitet još uvek nepoznat i da on neće stati, ono što nije sigurno je to koliko će on daleko dogurati dok ne dobije ono što želi.</em></p>",
-            'image_thumbnail' => "public/slike/vest-6-thumb.PNG",
-            'image_full' => "public/slike/vest-6-full.PNG",
+            'image_thumbnail' => "slike/vest-6-thumb.PNG",
+            'image_full' => "slike/vest-6-full.PNG",
             'kategorija_id' => 3,
             'user_id' => 2,
             'published' => true,
@@ -135,8 +135,8 @@ class vestsSeeder extends Seeder
                         <p>Možda se pitate šta je Znakotron mogao učiniti da natera ljude da ostave svoja vozila i koriste druge načine prevoza? Odgovor je: <strong>uništio je njihova vozila!</strong></p>
                         <p>Juče je više od 200 građana prijavilo policiji da su im vozila teško oštećena, dok je oko 100 ljudi prijavilo da su im vozila potpuno <strong>NESTALA!</strong> Ako Znakotron ima sposobnost da izazove ovakve posledice, teško je reći šta još sve može da učini.</p>
                         <p>Identitet Znakotrona još uvek nije otkriven.</p>",
-            'image_thumbnail' => "public/slike/vest-7-thumb.PNG",
-            'image_full' => "public/slike/vest-7-full.PNG",
+            'image_thumbnail' => "slike/vest-7-thumb.PNG",
+            'image_full' => "slike/vest-7-full.PNG",
             'kategorija_id' => 3,
             'user_id' => 2,
             'published' => true,
@@ -153,8 +153,8 @@ class vestsSeeder extends Seeder
                         <p>Treća i četvrta godina studija pružaju mogućnost za učenje o <strong>IT svetu</strong>, što će omogućiti studentima da se zaposle u <strong>online kladionicama</strong>. Četvrta godina takođe uključuje obrazovanje o <strong>kriptovalutama</strong>.</p>
                         <p>Reakcije roditelja na ovaj smer su pomešane. Dok neki izražavaju sumnju, drugi prepoznaju potencijal. <em>'Radije bih da moje dete završi ovaj smer i pronađe posao u online kladionici nego da upiše srednju medicinsku školu i postane medicinska sestra sa malom platom'</em>, komentariše jedan roditelj. Drugi dodaje: <em>'Iako ovaj smer može delovati smešno, smatram da je fantastično što deca mogu da se upoznaju sa finansijama, psihologijom, kompjuterima i marketingom.'</em></p>
                         <p>Ovaj novi smer u obrazovanju za kladioničare predstavlja zanimljiv i inovativan pristup, koji nudi širok spektar veština i znanja primenljivih u brzo rastućem sektoru igara na sreću.</p>",
-            'image_thumbnail' => "public/slike/vest-8-thumb.PNG",
-            'image_full' => "public/slike/vest-8-full.PNG",
+            'image_thumbnail' => "slike/vest-8-thumb.PNG",
+            'image_full' => "slike/vest-8-full.PNG",
             'kategorija_id' => 3,
             'user_id' => 3,
             'published' => true,
@@ -171,8 +171,8 @@ class vestsSeeder extends Seeder
                         <p>Uplašen, Aleksandar je proteklih nedelju dana ostajao kod kuće, primećujući grupu dečaka ispred svog dvorišta. Njegov otac mu je savetovao da 'reši stvari na muški način' i da se potuče sa nasilnicima. Međutim, Aleksandar je znao da ne može sam da se izbori sa <strong>četvoricom dečaka</strong>, čak ni uz oružje.</p>
                         <p>Sinoć, oko <strong>20 časova</strong>, Aleksandar je izašao iz kuće. Kada ga je napala grupa nasilnika, izvadio je <strong>benzin</strong> i polio ih, zatim upotrebio <strong>dezodorans</strong> i <strong>upaljač</strong> kako bi ih zapalio. Troje dečaka preminulo je na ulici, dok je četvrti preminuo u bolnici usled teških opekotina.</p>
                         <p>Aleksandrov otac je jutros <strong>uhapšen</strong>, dok se Aleksandar trenutno nalazi na <strong>psihijatrijskom odeljenju</strong>, gde se suočava sa posledicama ovog tragičnog incidenta.</p>",
-            'image_thumbnail' => "public/slike/vest-9-thumb.PNG",
-            'image_full' => "public/slike/vest-9-full.PNG",
+            'image_thumbnail' => "slike/vest-9-thumb.PNG",
+            'image_full' => "slike/vest-9-full.PNG",
             'kategorija_id' => 3,
             'user_id' => 3,
             'published' => true,
@@ -188,13 +188,13 @@ class vestsSeeder extends Seeder
                         <p>Štand, koji je bio smešten u <strong>parku iza gradskog pozorišta</strong>, zatvoren je juče nakon što su posetioci primetili neobičnu praksu dečaka. Naime, dok su prolaznici primećivali da na štandu nikada nije bilo limuna, dečak se često vraćao sa svežim, punim bocama. Ispostavilo se, međutim, da mali preduzetnik nije išao do svoje kuće da natoči još limunade, već se šetao <strong>iza obližnje prodavnice</strong> gde bi flaše punio svojom <strong>mokraćom</strong>.</p>
                         <p>Radnici održavanja parka primetili su šta se događa i odmah obavestili policiju. Dečakovi roditelji, zatečeni situacijom, tvrdili su da nisu imali pojma o njegovom <strong>'malom hobiju'</strong>, dok je mladi prodavac sve vreme ćutao i odbijao da komentariše.</p>
                         <p>Incident je izazvao <strong>burne reakcije u zajednici</strong>, a nadležne službe sada istražuju sve okolnosti ovog bizarnog slučaja.</p>",
-            'image_thumbnail' => "public/slike/vest-10-thumb.PNG",
-            'image_full' => "public/slike/vest-10-full.PNG",
+            'image_thumbnail' => "slike/vest-10-thumb.PNG",
+            'image_full' => "slike/vest-10-full.PNG",
             'kategorija_id' => 3,
             'user_id' => 3,
             'published' => true,
             'accepted' => true,
-             `hits` => 0,
+            // `hits` => 0,
         ]]);  
     }
 }

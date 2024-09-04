@@ -33,6 +33,7 @@ return new class extends Migration
             $table->string('image_full', 200);
             $table->unsignedBigInteger('kategorija_id');  // Change to unsignedBigInteger
             $table->unsignedBigInteger('user_id');        // Change to unsignedBigInteger
+            //$table->unsignedBigInteger('hits');
             $table->boolean('published');
             $table->boolean('accepted')->nullable();
             $table->foreign('kategorija_id')->references('id')->on('kategorijas');
