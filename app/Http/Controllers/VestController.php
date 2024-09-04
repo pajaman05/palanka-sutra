@@ -87,4 +87,12 @@ class VestController extends Controller
     // Redirekcija na stranicu sa prikazom nove vesti
     return redirect()->route('vest.single', ['slug' => $vest->slug]);
     }
+
+    //Counter za hitove
+    function single($id){
+        $vest = Vest::find($id);
+        $vest->hits = $vest->hits+1;
+        $vest->save();
+        return view('vesti.single', ['v' => $vest]);
+        }
 }
