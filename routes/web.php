@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KategorijaController;
+use App\Http\Controllers\TimController;
 use App\Http\Controllers\VestController;
 
 Route::get('/', function () {
@@ -33,7 +34,7 @@ Route::get('/kategorije', [KategorijaController::class, 'kategorije'])->name('ka
 
 
 Route::get('/kategorija/{id}', [KategorijaController::class, 'kategorijaById'])
-    ->where('id', '[0-9]+')
+    ->where('id', '[0-9]+') 
     ->name('kategorija.single.by.id');
 
     
@@ -49,3 +50,5 @@ Route::get('/vest/{slug}', [VestController::class, 'vest'])->name('vest.single')
 Route::get('/vest/create', [VestController::class, 'novaVest'])->name('vest.create');
 
 Route::post('/vest/insert', [VestController::class, 'unosVest'])->name('vest.insert');
+
+Route::get('/tim', [TimController::class, 'tim'])->name('tim');  

@@ -29,9 +29,9 @@
     <div class="main-menu d-none d-md-block">
         <nav>                  
             <ul id="navigation">
-                <li><a href="index.html">Početna</a></li>
-                <li><a href="about.html">Naš tim</a></li>
-                <li><a href="categori.html">Kategorije</a></li>
+                <li><a href="{{route('homepage')}}">Početna</a></li>
+                <li><a href="{{route('tim')}}">Naš tim</a></li>
+                <li><a href="{{route('kategorija.list')}}">Kategorije</a></li>
                 <li><a href="latest_news.html">Predviđanja</a></li>
                 <li><a href="#">Stranice</a>
                     <ul class="submenu">
