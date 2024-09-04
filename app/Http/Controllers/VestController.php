@@ -8,7 +8,7 @@ use App\Models\User;
 use App\Models\Diskusija;
 use App\Models\Kategorija;
 use App\Models\Komentar; 
-use App\Models\Sponzor;
+use App\Models\Sponzor; 
 use App\Models\Tim;
 use Illuminate\Support\Facades\Auth;
 
