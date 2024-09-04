@@ -34,25 +34,31 @@ class VestController extends Controller
     }
 
    
-    public function vest($slug)
-    {
-        // Proveri da li je slug broj (integer)
-        if (is_numeric($slug)) {
-            // Ako je broj, koristi find() za pretragu po ID-u
-            $vest = Vest::findOrFail($slug);
-        } else {
-            // Ako nije broj, koristi slug za pretragu
-            $vest = Vest::where('slug', $slug)->firstOrFail();
+
+
+    
+
+    public function vest($slug){
+        $vest = Vest::where('slug', $slug)->firstOrFail();
+        return view('vest.single', [ 'vest'=>$vest ]);
+      }
+
+
+
+      public function vestById($id)
+        {
+            $vest = Vest::findOrFail($id);
+            return redirect()->route('vest.single', ['slug' => $vest->slug]);
         }
 
-        // Prikaz view-a sa pronađenom vešću
-        return view('vest.single', ['vest' => $vest]);
-    }
+
 
     public function novaVest()
     {
         return view('vest.nova');
     }
+
+
 
     public function unosVesti(Request $request)
     {
@@ -88,11 +94,22 @@ class VestController extends Controller
     return redirect()->route('vest.single', ['slug' => $vest->slug]);
     }
 
-    //Counter za hitove
-    function single($id){
-        $vest = Vest::find($id);
-        $vest->hits = $vest->hits+1;
-        $vest->save();
-        return view('vesti.single', ['v' => $vest]);
-        }
+
+
+
+
+
+
+    function unesiKomentar(Request $request, $vest_id){
+        $vest = Vest::findOrFail($vest_id);
+        $novi_komentar = new Komentar();
+
+        $novi_komentar->sadrzaj = $request->input('sadrzaj');
+        $novi_komentar->vest_id = $vest_id;
+        $novi_komentar->datum = date('Y-m-d', time());
+        $novi_komentar->user_id = $request->user()->id;
+        $novi_komentar->save();
+
+        return redirect()->route('vest.singleById', ['id' => $vest_id]);
+    }
 }

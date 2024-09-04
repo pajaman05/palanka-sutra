@@ -6,10 +6,6 @@ use App\Http\Controllers\KategorijaController;
 use App\Http\Controllers\TimController;
 use App\Http\Controllers\VestController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -30,27 +26,39 @@ require __DIR__.'/auth.php';
 Route::get('/', [VestController::class, 'homepage'])->name('homepage');
 
 
+
 Route::get('/kategorije', [KategorijaController::class, 'kategorije'])->name('kategorija.list');
 
 
-Route::get('/kategorija/{id}', [KategorijaController::class, 'kategorijaById'])
-    ->where('id', '[0-9]+') 
-    ->name('kategorija.single.by.id');
 
-    
+Route::get('/kategorija/{id}', [KategorijaController::class, 'kategorijaById'])
+    ->where('id', '[0-9]+')
+    ->name('kategorija.singleById');    
 Route::get('/kategorija/{slug}', [KategorijaController::class, 'kategorija'])
     ->name('kategorija.single');
 
 
 
 
-//Mladen :3
+
+
+
+Route::post('/komentar/{vest_id}', [VestController::class, 'unesiKomentar'])->name('komentar.unesi');
+
+
+
 
 Route::get('/vest/create', [VestController::class, 'novaVest'])->name('vest.create');
 
 
-Route::post('/vest/insert', [VestController::class, 'unosVest'])->name('vest.insert');  
+Route::post('/vest/insert', [VestController::class, 'unosVest'])->name('vest.insert');
 
-Route::get('/vest/{slug}', [VestController::class, 'vest'])->name('vest.single');
 
-Route::get('/tim', [TimController::class, 'tim'])->name('tim');  
+// mladenov insert smatra drugacijim iz nekog razloga??
+// Route::post('/vest/insert', [VestController::class, 'unosVest'])->name('vest.insert');
+
+Route::get('/vest/{id}', [VestController::class, 'vestById'])
+    ->where('id', '[0-9]+')
+    ->name('vest.singleById');
+Route::get('/vest/{slug}', [VestController::class, 'vest'])
+    ->name('vest.single');
