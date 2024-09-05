@@ -1,9 +1,13 @@
 @extends('layouts.full-width')
 
+<!-- Header sections -->
+@include('partials.header-sections')
+
+<!-- Main sections -->
 @section('content-2')
     <div class="comment-form">
         <h4>Leave a Reply</h4>
-        <form class="form-contact comment_form" action="#" id="commentForm">
+        <form class="form-contact comment_form" method="POST" action="{{route('vest.insert')}}" id="commentForm">
             @csrf
             <div class="row">
                     <div class="col-12">
@@ -42,8 +46,11 @@
                     </div>
             </div>
             <div class="form-group">
-                <button type="submit" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
+                <button type="submit" class="button button-contactForm btn_1 boxed-btn">Napravi Vest</button>
             </div>
         </form>
     </div>
- @endsection
+@endsection
+
+<!-- Footer sections -->
+@include('partials.footer-sections')
