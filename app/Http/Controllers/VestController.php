@@ -63,35 +63,35 @@ class VestController extends Controller
     public function unosVesti(Request $request)
     {
        
-     // Validacija podataka
-     $request->validate([
-        'naslov' => 'required|string|max:255',
-        'slug' => 'required|string|max:255|unique:vests,slug',
-        'datum' => 'required|date',
-        'sazetak' => 'required|text',
-        'sadrzaj' => 'required|text',
-        'image_thumbnail' => 'required|url',
-        'image_full' => 'required|url',
-        'kategorija_id' => 'required|integer|exists:kategorijas,id',
-    ]);
+        // Validacija podataka
+        $request->validate([
+            'naslov' => 'required|string|max:255',
+            'slug' => 'required|string|max:255|unique:vests,slug',
+            'datum' => 'required|date',
+            'sazetak' => 'required|text',
+            'sadrzaj' => 'required|text',
+            'image_thumbnail' => 'required|url',
+            'image_full' => 'required|url',
+            'kategorija_id' => 'required|integer|exists:kategorijas,id',
+        ]);
 
-    // Kreiranje nove vesti
-    $vest = new Vest();
-    $vest->naslov = $request->naslov;
-    $vest->slug = $request->slug;
-    $vest->datum = $request->datum;
-    $vest->sazetak = $request->sazetak;
-    $vest->sadrzaj = $request->sadrzaj;
-    $vest->image_thumbnail = $request->image_thumbnail;
-    $vest->image_full = $request->image_full;
-    $vest->kategorija_id = $request->kategorija_id;
-    $vest->user_id = Auth::id(); // Postavlja se user_id na ID trenutno prijavljenog korisnika
-    $vest->published = false;
-    $vest->accepted = null;
-    $vest->save();
+        // Kreiranje nove vesti
+        $vest = new Vest();
+        $vest->naslov = $request->naslov;
+        $vest->slug = $request->slug;
+        $vest->datum = $request->datum;
+        $vest->sazetak = $request->sazetak;
+        $vest->sadrzaj = $request->sadrzaj;
+        $vest->image_thumbnail = $request->image_thumbnail;
+        $vest->image_full = $request->image_full;
+        $vest->kategorija_id = $request->kategorija_id;
+        $vest->user_id = Auth::id(); // Postavlja se user_id na ID trenutno prijavljenog korisnika
+        $vest->published = false;
+        $vest->accepted = null;
+        $vest->save();
 
-    // Redirekcija na stranicu sa prikazom nove vesti
-    return redirect()->route('vest.single', ['slug' => $vest->slug]);
+        // Redirekcija na stranicu sa prikazom nove vesti
+        return redirect()->route('vest.single', ['slug' => $vest->slug]);
     }
 
 
