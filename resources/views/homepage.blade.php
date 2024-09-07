@@ -97,19 +97,19 @@
                             <div class="col-xl-6 col-lg-12">
                                 <div class="whats-news-single mb-40 mb-40">
                                     <div class="whates-img">
-                                        <img src="{{ asset('template/news-master/assets/img/gallery/whats_news_details1.png') }}" alt="">
+                                        <img src="{{$randomVesti[0]->image_thumbnail}}" alt="randomVest">
                                     </div>
                                     <div class="whates-caption">
-                                        <h4><a href="latest_news.html">Secretart for Economic Air plane that looks like</a></h4>
-                                        <span>by Alice cloe   -   Jun 19, 2020</span>
-                                        <p>Struggling to sell one multi-million dollar home currently on the market won’t stop actress and singer Jennifer Lopez.</p>
+                                        <h4><a href="{{ route('vest.single', ['slug' => $randomVesti[0]->slug]) }}">{{ $randomVesti[0]->naslov }}</a></h4>
+                                        <span>{{ $randomVesti[0]->datum}}</span>
+                                        <p>{{ Str::limit($randomVesti[0]->sazetak, 150) }}</p>
                                     </div>
                                 </div>
                             </div>
                             <!-- Right single caption -->
                             <div class="col-xl-6 col-lg-12">
                                 <div class="row">
-                                    @foreach($vesti as $vest)
+                                    @foreach($vesti->take(4) as $vest)
                                         <!-- single -->
                                         <div class="col-xl-12 col-lg-6 col-md-6 col-sm-10">
                                             <div class="whats-right-single mb-20">
@@ -118,7 +118,7 @@
                                                 </div>
                                                 <div class="whats-right-cap">
                                                     <span class="colorb">FASHION</span>
-                                                    <h4><a href="latest_news.html">{{$vest->naslov}}</a></h4>
+                                                    <h4><a href="{{ route('vest.singleById', ['id' => $vest->id]) }}">{{$vest->naslov}}</a></h4>
                                                     <p>{{$vest->datum}}</p> 
                                                 </div>
                                             </div>
