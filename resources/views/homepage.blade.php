@@ -17,7 +17,7 @@
                         <div class="trend-top-cap">
                             <span class="bgr" data-animation="fadeInUp" data-delay=".2s" data-duration="1000ms">
                                 </span>
-                            <h2><a href="latest_news.html" data-animation="fadeInUp"data-delay=".4s" data-duration="1000ms">
+                            <h2><a href="{{ route('vest.singleById', ['id' => $vest->id]) }}" data-animation="fadeInUp"data-delay=".4s" data-duration="1000ms">
                                 {{$vest->naslov}}</a></h2>
                             <p data-animation="fadeInUp" data-delay=".6s" data-duration="1000ms">
                                 {{$vest->datum}}</p>
@@ -37,7 +37,7 @@
                     <img src="{{$randomVesti[0]->image_thumbnail}}" alt="">
                     <div class="trend-top-cap trend-top-cap2">
                         <span class="bgb">FASHION</span>
-                        <h2><a href="latest_news.html">
+                        <h2><a href="{{ route('vest.singleById', ['id' => $randomVesti[0]->id]) }}">
                             {{$randomVesti[0]->naslov}}</a></h2>
                         <p>{{$randomVesti[0]->datum}}</p>
                     </div>
@@ -50,7 +50,7 @@
                     <img src="{{$randomVesti[1]->image_thumbnail}}" alt="">
                     <div class="trend-top-cap trend-top-cap2">
                         <span class="bgg">TECH </span>
-                        <h2><a href="latest_news.html">
+                        <h2><a href="{{ route('vest.singleById', ['id' => $randomVesti[1]->id]) }}">
                             {{$randomVesti[1]->naslov}}</a></h2>
                         <p>{{$randomVesti[1]->datum}}</p>
                     </div>
@@ -75,9 +75,15 @@
                     <nav>                                                 
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
                             @foreach($kategorije as $kategorija)
-                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab"
-                                href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
-                                    {{$kategorija -> naziv}}</a>
+                                <a  class="nav-item nav-link active" 
+                                    id="nav-home-tab" 
+                                    data-toggle="tab" 
+                                    href="{{ route('kategorija.singleById', ['id' => $kategorija->id]) }}" 
+                                    role="tab" 
+                                    aria-controls="nav-home" 
+                                    aria-selected="true">
+                                    {{ $kategorija->naziv }}
+                                </a>
                             @endforeach
                         </div>
                     </nav>
