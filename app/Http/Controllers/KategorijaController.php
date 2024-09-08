@@ -12,10 +12,8 @@ class KategorijaController extends Controller
     public function kategorije()
     {
         $kategorije = Kategorija::all();
-
-        session()->put('kategorije', $kategorije);
-
         $prvaKategorija = $kategorije->first();
+
         return redirect()->route('kategorija.single', ['slug' => $prvaKategorija->slug]);
 
         // return view('kategorija.list', ['kategorije' => $kategorije]);
@@ -25,15 +23,16 @@ class KategorijaController extends Controller
 
 
     // Funkcija za prikaz jedne kategorije i njenih vesti
-    public function kategorija($slug){
-        
-        $kategorije = session()->get('kategorije', collect());
+    public function kategorija($slug)
+    {
+
+        $kategorije = Kategorija::all();
         $kategorija = Kategorija::where('slug', $slug)->firstOrFail();
 
         return view('kategorija.single', ['kategorija' => $kategorija, 'kategorije' => $kategorije]);
 
         // return view('kategorija.single', [ 'kategorija'=>$kategorija ]);
-      }
+    }
 
 
 

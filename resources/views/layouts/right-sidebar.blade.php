@@ -5,6 +5,8 @@
     <body>
     @include('layouts.moj-template.partials.preloader')
     @include('layouts.moj-template.partials.header')
+
+    <!-- MAIN -->
     <main>
         <div class="about-area2 gray-bg pt-60 pb-60">
             <div class="container">
@@ -19,8 +21,6 @@
                                 <div class="col-12">
                                     <div class="tab-content" id="nav-tabContent">
                                         @yield('vesti')
-                                        @yield('komentari')
-                                        @yield('komentar_forma')
                                     </div>
                                 </div>
                             </div>

@@ -118,6 +118,8 @@ class VestController extends Controller
 
         // Redirekcija na stranicu sa prikazom nove vesti
         return redirect()->route('vest.single', ['slug' => $vest->slug]);
+        // Redirekcija na stranicu sa prikazom nove vesti
+        return redirect()->route('vest.single', ['slug' => $vest->slug]);
     }
 
 
@@ -142,6 +144,8 @@ class VestController extends Controller
         $novi_komentar->user_id = $request->user()->id;
         $novi_komentar->save();
 
-        return redirect()->route('vest.singleById', ['id' => $vest_id]);
-    }
+    return redirect()->back()->with('message', 'Komentar je uspesno poslat!');
+    // return redirect()->route('vest.singleById', ['id' => $vest_id])->with('message', 'Komentar je uspesno poslat...');
+}
+
 }
