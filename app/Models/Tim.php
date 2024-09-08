@@ -8,5 +8,5 @@ use Illuminate\Support\Facades\DB;
 
 class Tim extends Model
 {
-    use HasFactory;
+    use HasFactory; 
 }
