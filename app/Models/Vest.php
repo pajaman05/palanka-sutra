@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\DB;
 class Vest extends Model
 {
     use HasFactory;
+    
+    protected $fillable = [
+        'naslov', 'slug', 'datum', 'sazetak', 'sadrzaj', 'image_thumbnail', 'image_full', 'kategorija_id', 'user_id', 'published', 'accepted'
+    ];
 
     public function kategorija()
     {

@@ -1,9 +1,10 @@
 @extends('layouts.right-sidebar')
 
 
+<!-- Header sections -->
+@include('partials.header-sections')
 
-
-
+<!-- Main sections -->
 @section('lista_kategorija')
     <div class="col-xl-4">
         <div class="section-tittle mb-30">
@@ -83,7 +84,8 @@
 
 @endsection
 
-
+<!-- Footer sections -->
+@include('partials.footer-sections')
 
 
 

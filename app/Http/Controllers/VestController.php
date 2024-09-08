@@ -55,23 +55,22 @@ class VestController extends Controller
 
     public function novaVest()
     {
-        return view('vest.nova');
+        $kategorijas = Kategorija::all(); // Fetch all categories
+        return view('vest.nova', compact('kategorijas'));
     }
 
 
 
-    public function unosVesti(Request $request)
+    public function unosVest(Request $request)
     {
-       
         // Validacija podataka
         $request->validate([
             'naslov' => 'required|string|max:255',
             'slug' => 'required|string|max:255|unique:vests,slug',
-            'datum' => 'required|date',
-            'sazetak' => 'required|text',
-            'sadrzaj' => 'required|text',
-            'image_thumbnail' => 'required|url',
-            'image_full' => 'required|url',
+            'sazetak' => 'required|string',
+            'sadrzaj' => 'required|string',
+            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'full' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'kategorija_id' => 'required|integer|exists:kategorijas,id',
         ]);
 
@@ -79,20 +78,53 @@ class VestController extends Controller
         $vest = new Vest();
         $vest->naslov = $request->naslov;
         $vest->slug = $request->slug;
-        $vest->datum = $request->datum;
+        $vest->datum = now(); // Postavi trenutni datum
         $vest->sazetak = $request->sazetak;
         $vest->sadrzaj = $request->sadrzaj;
-        $vest->image_thumbnail = $request->image_thumbnail;
-        $vest->image_full = $request->image_full;
         $vest->kategorija_id = $request->kategorija_id;
         $vest->user_id = Auth::id(); // Postavlja se user_id na ID trenutno prijavljenog korisnika
         $vest->published = false;
         $vest->accepted = null;
+
+        // Use placeholder values to satisfy database constraints
+        $vest->image_thumbnail = 'placeholder-thumbnail.jpg';
+        $vest->image_full = 'placeholder-full.jpg';
+
+        // Save the Vest first to get the ID
+        $vest->save();
+
+        // Upload thumbnail slike
+        if ($request->hasFile('thumbnail')) {
+            $thumbnail = $request->file('thumbnail');
+            $thumbnailExtension = $thumbnail->getClientOriginalExtension();
+            $thumbnailName = 'vest-thumb-' . $vest->id . '.' . $thumbnailExtension;
+            $thumbnailPath = 'slike/' . $thumbnailName;
+            $thumbnail->move(public_path('slike'), $thumbnailName);
+            $vest->image_thumbnail = $thumbnailPath;
+        }
+
+        // Upload full slike
+        if ($request->hasFile('full')) {
+            $full = $request->file('full');
+            $fullExtension = $full->getClientOriginalExtension();
+            $fullName = 'vest-full-' . $vest->id . '.' . $fullExtension;
+            $fullPath = 'slike/' . $fullName;
+            $full->move(public_path('slike'), $fullName);
+            $vest->image_full = $fullPath;
+        }
+
+        // Update Vest with image paths
         $vest->save();
 
         // Redirekcija na stranicu sa prikazom nove vesti
         return redirect()->route('vest.single', ['slug' => $vest->slug]);
     }
+
+
+
+
+
+
 
 
 

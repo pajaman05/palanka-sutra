@@ -50,7 +50,7 @@ Route::get('/tim', [TimController::class, 'tim'])->name('tim');
 
 Route::get('/vest/create', [VestController::class, 'novaVest'])->name('vest.create');
 
-
+// Nesto nije u redu, ili sa rutom ili sa kontrolerom, jer vesti ne stavlja u bazu
 Route::post('/vest/insert', [VestController::class, 'unosVest'])->name('vest.insert');
 
 
