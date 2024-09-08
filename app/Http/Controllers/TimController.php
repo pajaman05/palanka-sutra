@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Tim;
+
 
 class TimController extends Controller
 {
     public function tim()
     {
-        return view('tim');
+        $tim = Tim::all();
+        return view('tim.tim', ['tim'=>$tim]); 
     }
 }
