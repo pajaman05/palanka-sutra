@@ -11,6 +11,6 @@ class TimController extends Controller
     public function tim()
     {
         $tim = Tim::all();
-        return view('tim', ['tim'=>$tim]); 
+        return view('tim.tim', ['tim'=>$tim]); 
     }
 }
