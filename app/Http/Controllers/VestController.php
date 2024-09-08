@@ -19,7 +19,7 @@ class VestController extends Controller
         $vests = Vest::latest()->take(10)->get();
 
         // Prikupi dve nasumične vesti
-        $randomVesti = Vest::inRandomOrder()->take(2)->get();
+        $popularneVesti = Vest::orderBy(`hits`, `descending`)->take(2)->get();
 
         // Prikupi sve kategorije
         $kategorije = Kategorija::all();
@@ -27,7 +27,7 @@ class VestController extends Controller
         // Prosledi sve podatke u view
         return view('homepage', [
             'vesti' => $vests,
-            'randomVesti' => $randomVesti,
+            'randomVesti' => $popularneVesti,
             'kategorije' => $kategorije
         ]);
     }
@@ -43,6 +43,9 @@ class VestController extends Controller
             // Ako nije broj, koristi slug za pretragu
             $vest = Vest::where('slug', $slug)->firstOrFail();
         }
+        
+        $vest->hits = $vest->hits+1;
+        $vest->save();
 
         // Prikaz view-a sa pronađenom vešću
         return view('vest.single', ['vest' => $vest]);

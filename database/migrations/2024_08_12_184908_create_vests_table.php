@@ -37,6 +37,7 @@ return new class extends Migration
             $table->boolean('accepted')->nullable();
             $table->foreign('kategorija_id')->references('id')->on('kategorijas');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->integer(`hits`)->default(0);
         });
 
         // Create 'komentars' table
