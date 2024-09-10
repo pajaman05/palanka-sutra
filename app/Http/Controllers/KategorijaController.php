@@ -15,24 +15,36 @@ class KategorijaController extends Controller
         $prvaKategorija = $kategorije->first();
 
         return redirect()->route('kategorija.single', ['slug' => $prvaKategorija->slug]);
-
-        // return view('kategorija.list', ['kategorije' => $kategorije]);
     }
 
 
 
 
     // Funkcija za prikaz jedne kategorije i njenih vesti
+/*
     public function kategorija($slug)
     {
-
         $kategorije = Kategorija::all();
         $kategorija = Kategorija::where('slug', $slug)->firstOrFail();
 
         return view('kategorija.single', ['kategorija' => $kategorija, 'kategorije' => $kategorije]);
-
-        // return view('kategorija.single', [ 'kategorija'=>$kategorija ]);
     }
+*/
+
+
+   public function kategorija($slug)
+{
+    $kategorije = Kategorija::all();
+    $kategorija = Kategorija::where('slug', $slug)->firstOrFail();
+    $vesti = $kategorija->vesti()->paginate(3);
+
+    return view('kategorija.single', [
+        'kategorija' => $kategorija,
+        'kategorije' => $kategorije,
+        'vesti' => $vesti
+    ]);
+}
+
 
 
 

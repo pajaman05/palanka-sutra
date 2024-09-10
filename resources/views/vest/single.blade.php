@@ -5,6 +5,7 @@
 
 
 @section('vesti')
+<div class="tab-content" id="nav-tabContent">
     <div class="about-right mb-90">
         <div class="heading-news mb-30 pt-30">
            <h3> {{$vest->naslov}} </h3>
@@ -13,7 +14,7 @@
             <img src="{{$vest->image_full}}" alt="">
         </div>
         <div class="about-prea">
-            {!!$vest->sadrzaj!!}
+            {!! $vest->sadrzaj !!}
         </div> 
 
 
@@ -34,7 +35,7 @@
     
     @include('layouts.moj-template.partials.komentari')
     @include('layouts.moj-template.partials.komentar-forma')
-
+</div>
 @endsection
 
 
