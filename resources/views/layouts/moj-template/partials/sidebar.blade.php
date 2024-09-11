@@ -1,4 +1,4 @@
-<div class="col-lg-4">    
+  
     <div class="single-follow mb-45">
         <div class="single-box">
             <div class="follow-us d-flex align-items-center">
@@ -43,4 +43,3 @@
     <div class="news-poster d-none d-lg-block">
         <img src="{{ asset('template/news-master/assets/img/news/news_card.jpg') }}" alt="Poster vesti">
     </div>    
-</div>

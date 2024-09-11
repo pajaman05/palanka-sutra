@@ -6,6 +6,7 @@
 
 <!-- Main sections -->
 @section('lista_kategorija')
+<div class="justify-content-between align-items-end mb-15">
     <div class="col-xl-4">
         <div class="section-tittle mb-30">
             <h3>Nevesti Palanke</h3>
@@ -28,6 +29,7 @@
             </nav>
         </div>
     </div>
+</div>
 @endsection
 
 
@@ -35,7 +37,17 @@
 
 
 
+
+
+
+
+
+
+
+
+
 @section('vesti')
+<div class="tab-content" id="nav-tabContent">
     @foreach($kategorije as $kategorija)
         <div class="tab-pane fade {{ $kategorija->slug == request()->slug ? 'show active' : '' }}" 
              id="nav-{{ $kategorija->slug }}" 
@@ -57,6 +69,47 @@
             </ul>
         </div>
     @endforeach
+</div>
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- vesti sa paginacijom direktno -->
+@section('vesti')
+    <div class="tab-pane fade show active" 
+         id="nav-{{ $kategorija->slug }}" 
+         role="tabpanel" 
+         aria-labelledby="nav-{{ $kategorija->slug }}-tab">
+        
+        <ul>
+            @foreach($vesti as $vest)
+                <li>
+                    <h3>{{ $vest->naslov }}</h3>
+                    <img src="{{ $vest->image_thumbnail }}" alt="{{ $vest->naslov }}">
+                    <p>{!! $vest->sazetak !!}</p>
+                    <p>Datum objave: {{ $vest->datum }}</p>
+                    <a href="{{ route('vest.single', ['slug' => $vest->slug]) }}" style="display: inline-block; margin-top: 10px;margin-bottom: 20px; text-decoration: underline; color: black;">
+                        Pročitaj više
+                    </a>
+                </li>
+            @endforeach
+        </ul>
+
+        <!-- Paginate links -->
+        <div class="pagination">
+            {{ $vesti->links() }} <!-- Laravel automatski generiše linkove za paginaciju -->
+        </div>
+    </div>
 @endsection
 
 

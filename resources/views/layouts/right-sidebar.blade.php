@@ -11,22 +11,22 @@
         <div class="about-area2 gray-bg pt-60 pb-60">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8">
-                        <div class="whats-news-wrapper">
-                            <div class="row justify-content-between align-items-end mb-15">
+                    <div class="col-lg-8 whats-news-wrapper">
+                        
+                            <div class="row">
                                 @yield('lista_kategorija')
                             </div>
 
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="tab-content" id="nav-tabContent">
-                                        @yield('vesti')
-                                    </div>
+                                    @yield('vesti')
                                 </div>
                             </div>
-                        </div>
+
                     </div>
-                        @include('layouts.moj-template.partials.sidebar')
+                        <div class="col-lg-4">  
+                            @include('layouts.moj-template.partials.sidebar')
+                        </div>
                 </div>
             </div>
     </div>
