@@ -22,11 +22,10 @@
                                     @yield('vesti')
                                 </div>
                             </div>
-
                     </div>
-                        <div class="col-lg-4">  
-                            @include('layouts.moj-template.partials.sidebar')
-                        </div>
+                    <div class="col-lg-4">  
+                        @include('layouts.moj-template.partials.sidebar')
+                    </div>
                 </div>
             </div>
     </div>
