@@ -84,7 +84,7 @@
 
 
 
-<!-- vesti sa paginacijom direktno -->
+<!-- vesti sa paginacijom direktno 
 @section('vesti')
     <div class="tab-pane fade show active" 
          id="nav-{{ $kategorija->slug }}" 
@@ -105,13 +105,13 @@
             @endforeach
         </ul>
 
-        <!-- Paginate links -->
+
         <div class="pagination">
-            {{ $vesti->links() }} <!-- Laravel automatski generiše linkove za paginaciju -->
+            {{ $vesti->links() }}
         </div>
     </div>
 @endsection
-
+-->
 
 
 
