@@ -55,6 +55,15 @@
                             <div class="mobile_menu d-block d-md-none"></div>
                         </div>
                     </div>
+                    @auth
+                        @if(auth()->user()->tip === 'admin') <!-- Check if 'tip' is 'admin' -->
+                            <div class="row align-items-center">
+                                <div class="col-xl-12 col-lg-12 col-md-12 header-flex">
+                                    @yield('admin-navigation')
+                                </div>
+                            </div>
+                        @endif
+                    @endauth
                 </div>
             </div>
         </div>

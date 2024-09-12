@@ -35,7 +35,23 @@
                     </ul>
                 </li>
                 <li><a href="contact.html">Kontakt</a></li>
-                <li><a href="{{route('vest.create')}}">Create New Vest</a>
+            </ul>
+        </nav>
+    </div>
+@endsection
+
+@section('admin-navigation')
+    <div class="main-menu d-none d-md-block" style="text-align: center;">
+        <nav>
+            <ul id="navigation" style="display: inline-block;">
+                <li>
+                    <a href="{{route('vest.create')}}" 
+                    style="font-size: 18px; font-style: italic; color: white; text-decoration: none;" 
+                    onmouseover="this.style.color='yellow'" 
+                    onmouseout="this.style.color='white'">
+                    Create New Vest
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>
