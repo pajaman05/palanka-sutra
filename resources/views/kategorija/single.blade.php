@@ -7,12 +7,12 @@
 <!-- Main sections -->
 @section('lista_kategorija')
 <div class="justify-content-between align-items-end mb-15">
-    <div class="col-xl-4">
+    <div class="col-xl-6">
         <div class="section-tittle mb-30">
             <h3>Nevesti Palanke</h3>
         </div>
     </div>
-    <div class="col-xl-8 col-md-9">
+    <div class="col-xl-12 col-md-12">
         <div class="properties__button">
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
