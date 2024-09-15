@@ -7,6 +7,24 @@
 <!-- Main sections -->
 @section('content-2')
     <div class="comment-form">
+
+
+        <!-- flesh poruka prikaz -->
+        <div>
+            @if(session()->has('success'))
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                </div>
+            @endif
+
+            @if(session()->has('error'))
+                <div class="alert alert-danger">
+                    {{ session()->get('error') }}
+                </div>
+            @endif
+        </div>
+
+        
         <h3 style="margin-bottom: 30px">Napravi novu ekstravagantnu nevest Palanke!</h3>
         <form class="form-contact comment_form" method="POST" action="{{route('vest.insert')}}" id="commentForm" enctype="multipart/form-data">
             @csrf
@@ -65,7 +83,7 @@
             <div class="form-group">
                 <button type="submit" class="button button-contactForm btn_1 boxed-btn">Napravi Vest</button>
             </div>
-        </form>
+        </form>        
     </div>
 @endsection
 
@@ -80,7 +98,7 @@
 <script src="https://cdn.tiny.cloud/1/554b6aymjjhs1fa0nksgsornxsshclhnaprspschu4pw4vyv/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
     tinymce.init({
-        selector: 'textarea',  // Selektuje sve <textarea> elemente
+        selector: 'textarea',
         plugins: [
             'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'image', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount',
             'checklist', 'mediaembed', 'casechange', 'export', 'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'editimage', 'advtemplate', 'ai', 'mentions', 'tinycomments', 'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss', 'markdown',

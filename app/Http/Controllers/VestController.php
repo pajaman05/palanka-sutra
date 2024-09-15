@@ -62,10 +62,12 @@ class VestController extends Controller
 
 
 
+
+
     public function unosVest(Request $request)
     {
-        // Validacija podataka
-        $request->validate([
+
+        $rules = [
             'naslov' => 'required|string|max:255',
             'slug' => 'required|string|max:255|unique:vests,slug',
             'sazetak' => 'required|string',
@@ -73,102 +75,37 @@ class VestController extends Controller
             'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'full' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'kategorija_id' => 'required|integer|exists:kategorijas,id',
-        ]);
-
-        // Kreiranje nove vesti
-        $vest = new Vest();
-        $vest->naslov = $request->naslov;
-        $vest->slug = $request->slug;
-        $vest->datum = now(); // Postavi trenutni datum
-        $vest->sazetak = $request->sazetak;
-        $vest->sadrzaj = $request->sadrzaj;
-        $vest->kategorija_id = $request->kategorija_id;
-        $vest->user_id = Auth::id(); // Postavlja se user_id na ID trenutno prijavljenog korisnika
-        $vest->published = false;
-        $vest->accepted = null;
-
-        // Use placeholder values to satisfy database constraints
-        $vest->image_thumbnail = 'placeholder-thumbnail.jpg';
-        $vest->image_full = 'placeholder-full.jpg';
-
-        // Save the Vest first to get the ID
-        $vest->save();
-
-        // Upload thumbnail slike
-        if ($request->hasFile('thumbnail')) {
-            $thumbnail = $request->file('thumbnail');
-            $thumbnailExtension = $thumbnail->getClientOriginalExtension();
-            $thumbnailName = 'vest-thumb-' . $vest->id . '.' . $thumbnailExtension;
-            $thumbnailPath = 'slike/' . $thumbnailName;
-            $thumbnail->move(public_path('slike'), $thumbnailName);
-            $vest->image_thumbnail = $thumbnailPath;
-        }
-
-        // Upload full slike
-        if ($request->hasFile('full')) {
-            $full = $request->file('full');
-            $fullExtension = $full->getClientOriginalExtension();
-            $fullName = 'vest-full-' . $vest->id . '.' . $fullExtension;
-            $fullPath = 'slike/' . $fullName;
-            $full->move(public_path('slike'), $fullName);
-            $vest->image_full = $fullPath;
-        }
-
-        // Update Vest with image paths
-        $vest->save();
-
-        // Redirekcija na stranicu sa prikazom nove vesti
-        return redirect()->route('vest.single', ['slug' => $vest->slug]);
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* duplikat unosVest sa message fleshovima za uspeh/neuspeh
-
-    public function unosVest(Request $request)
-    {
-        // Validacija podataka
-        $request->validate([
-            'naslov' => 'required|string|max:255',
-            'slug' => 'required|string|max:255|unique:vests,slug',
-            'sazetak' => 'required|string',
-            'sadrzaj' => 'required|string',
-            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'full' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'kategorija_id' => 'required|integer|exists:kategorijas,id',
-        ]);
+        ];
     
-        // Kreiranje nove vesti
-        try {
+        $validator = Validator::make($request->all(), $rules);
+    
+        if ($validator->fails()) {
+            return redirect()->back()->with('error', 'Svi podaci moraju biti ispravno popunjeni. Pokušajte ponovo!')
+                ->withErrors($validator)
+                ->withInput();
+        }
+    
+
+
             $vest = new Vest();
             $vest->naslov = $request->naslov;
             $vest->slug = $request->slug;
-            $vest->datum = now(); // Postavi trenutni datum
+            $vest->datum = now();
             $vest->sazetak = $request->sazetak;
             $vest->sadrzaj = $request->sadrzaj;
             $vest->kategorija_id = $request->kategorija_id;
-            $vest->user_id = Auth::id(); // Postavlja se user_id na ID trenutno prijavljenog korisnika
+            $vest->user_id = Auth::id();
             $vest->published = false;
             $vest->accepted = null;
     
-            // Use placeholder values to satisfy database constraints
+
             $vest->image_thumbnail = 'placeholder-thumbnail.jpg';
             $vest->image_full = 'placeholder-full.jpg';
     
-            // Save the Vest first to get the ID
+
             $vest->save();
     
-            // Upload thumbnail slike
+
             if ($request->hasFile('thumbnail')) {
                 $thumbnail = $request->file('thumbnail');
                 $thumbnailExtension = $thumbnail->getClientOriginalExtension();
@@ -178,7 +115,7 @@ class VestController extends Controller
                 $vest->image_thumbnail = $thumbnailPath;
             }
     
-            // Upload full slike
+
             if ($request->hasFile('full')) {
                 $full = $request->file('full');
                 $fullExtension = $full->getClientOriginalExtension();
@@ -187,23 +124,14 @@ class VestController extends Controller
                 $full->move(public_path('slike'), $fullName);
                 $vest->image_full = $fullPath;
             }
-    
-            // Update Vest with image paths
+            
             $vest->save();
     
-            // Redirekcija sa porukom o uspehu
-            return redirect()->route('vest.single', ['slug' => $vest->slug])
-                ->with('message', 'Vest je uspešno prosleđena staff timu na pregled!');
-    
-        } catch (\Exception $e) {
-            // U slučaju greške, vrati na formu sa prethodnim unosom
-            return redirect()->back()
-                ->with('message', 'Došlo je do greške prilikom unosa vesti. Pokušajte ponovo.')
-                ->withInput();
-        }
+            session()->flash('success', 'Vest je uspešno prosleđena staff timu na pregled!');
+            return redirect()->route('vest.single', ['slug' => $vest->slug]);
     }
     
-*/
+
 
 
 
@@ -228,7 +156,7 @@ class VestController extends Controller
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
-            return redirect()->back()->with('message', 'Moraš uneti sadržaj komentara da bi ga objavio!');
+            return redirect()->back()->with('error', 'Moraš uneti sadržaj komentara da bi ga objavio!');
         }
 
 
@@ -241,7 +169,7 @@ class VestController extends Controller
         $novi_komentar->user_id = $request->user()->id;
         $novi_komentar->save();
 
-    return redirect()->back()->with('message', 'Komentar je uspesno poslat!');
+    return redirect()->back()->with('success', 'Komentar je uspesno poslat!');
     // return redirect()->route('vest.singleById', ['id' => $vest_id])->with('message', 'Komentar je uspesno poslat...');
 }
 
