@@ -15,13 +15,22 @@ use Illuminate\Support\Facades\Validator;
 
 class VestController extends Controller
 {
+
+
     public function homepage()
     {
         // Prikupi najnovije vesti
         $vests = Vest::latest()->take(10)->get();
 
-        // Prikupi dve nasumične vesti
-        $randomVesti = Vest::inRandomOrder()->take(2)->get();
+        // popularna vest
+        $popularneVesti = Vest::whereHas('komentari', function ($query) {
+            $query->orderBy('datum', 'desc');
+        })
+        ->with(['komentari' => function ($query) {
+            $query->orderBy('datum', 'desc');
+        }])
+        ->take(2)
+        ->get();
 
         // Prikupi sve kategorije
         $kategorije = Kategorija::all();
@@ -29,7 +38,7 @@ class VestController extends Controller
         // Prosledi sve podatke u view
         return view('homepage', [
             'vesti' => $vests,
-            'randomVesti' => $randomVesti,
+            'popularneVesti' => $popularneVesti,
             'kategorije' => $kategorije
         ]);
     }
@@ -46,6 +55,8 @@ class VestController extends Controller
 
 
 
+
+
       public function vestById($id)
         {
             $vest = Vest::findOrFail($id);
@@ -54,11 +65,15 @@ class VestController extends Controller
 
 
 
+
+
     public function novaVest()
     {
         $kategorijas = Kategorija::all(); // Fetch all categories
         return view('vest.nova', compact('kategorijas'));
     }
+
+
 
 
 
@@ -130,47 +145,4 @@ class VestController extends Controller
             session()->flash('success', 'Vest je uspešno prosleđena staff timu na pregled!');
             return redirect()->route('vest.single', ['slug' => $vest->slug]);
     }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function unesiKomentar(Request $request, $vest_id){
-
-        $rules = [
-            'sadrzaj' => 'required|string|max:1000',
-        ];
-
-        $validator = Validator::make($request->all(), $rules);
-
-        if ($validator->fails()) {
-            return redirect()->back()->with('error', 'Moraš uneti sadržaj komentara da bi ga objavio!');
-        }
-
-
-        $vest = Vest::findOrFail($vest_id);
-        $novi_komentar = new Komentar();
-
-        $novi_komentar->sadrzaj = $request->input('sadrzaj');
-        $novi_komentar->vest_id = $vest_id;
-        $novi_komentar->datum = date('Y-m-d', time());
-        $novi_komentar->user_id = $request->user()->id;
-        $novi_komentar->save();
-
-    return redirect()->back()->with('success', 'Komentar je uspesno poslat!');
-    // return redirect()->route('vest.singleById', ['id' => $vest_id])->with('message', 'Komentar je uspesno poslat...');
-}
-
 }

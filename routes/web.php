@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KategorijaController;
+use App\Http\Controllers\KomentarController;
 use App\Http\Controllers\TimController;
 use App\Http\Controllers\VestController;
 
@@ -43,7 +44,7 @@ Route::get('/kategorija/{slug}', [KategorijaController::class, 'kategorija'])
 
 
 
-Route::post('/komentar/{vest_id}', [VestController::class, 'unesiKomentar'])->name('komentar.unesi');
+Route::post('/komentar/{vest_id}', [KomentarController::class, 'unesiKomentar'])->name('komentar.unesi');
 
 Route::get('/tim', [TimController::class, 'tim'])->name('tim');
 

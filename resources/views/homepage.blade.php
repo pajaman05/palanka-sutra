@@ -1,10 +1,14 @@
 @extends('layouts.pocetna')
 
+
 @section('header-info')
-    {{$randomVesti[0]->naslov}}
+    {{$popularneVesti[0]->naslov}}
 @endsection
 
+
 @include('partials.header-sections')
+
+
 
 @section('trending-slider')
     <div class="slider-active">
@@ -29,17 +33,18 @@
     </div>        
 @endsection
 
+
 @section('trending-sidebar')
     <div class="row">
         <div class="col-lg-12 col-md-6 col-sm-6">
             <div class="trending-top mb-30">
                 <div class="trend-top-img">
-                    <img src="{{$randomVesti[0]->image_thumbnail}}" alt="">
+                    <img src="{{$popularneVesti[0]->image_thumbnail}}" alt="">
                     <div class="trend-top-cap trend-top-cap2">
                         <span class="bgb">FASHION</span>
-                        <h2><a href="{{ route('vest.singleById', ['id' => $randomVesti[0]->id]) }}">
-                            {{$randomVesti[0]->naslov}}</a></h2>
-                        <p>{{$randomVesti[0]->datum}}</p>
+                        <h2><a href="{{ route('vest.singleById', ['id' => $popularneVesti[0]->id]) }}">
+                            {{$popularneVesti[0]->naslov}}</a></h2>
+                        <p>{{$popularneVesti[0]->datum}}</p>
                     </div>
                 </div>
             </div>
@@ -47,12 +52,12 @@
         <div class="col-lg-12 col-md-6 col-sm-6">
             <div class="trending-top mb-30">
                 <div class="trend-top-img">
-                    <img src="{{$randomVesti[1]->image_thumbnail}}" alt="">
+                    <img src="{{$popularneVesti[1]->image_thumbnail}}" alt="">
                     <div class="trend-top-cap trend-top-cap2">
                         <span class="bgg">TECH </span>
-                        <h2><a href="{{ route('vest.singleById', ['id' => $randomVesti[1]->id]) }}">
-                            {{$randomVesti[1]->naslov}}</a></h2>
-                        <p>{{$randomVesti[1]->datum}}</p>
+                        <h2><a href="{{ route('vest.singleById', ['id' => $popularneVesti[1]->id]) }}">
+                            {{$popularneVesti[1]->naslov}}</a></h2>
+                        <p>{{$popularneVesti[1]->datum}}</p>
                     </div>
                 </div>
             </div>
@@ -103,12 +108,12 @@
                             <div class="col-xl-6 col-lg-12">
                                 <div class="whats-news-single mb-40 mb-40">
                                     <div class="whates-img">
-                                        <img src="{{$randomVesti[0]->image_thumbnail}}" alt="randomVest">
+                                        <img src="{{$popularneVesti[0]->image_thumbnail}}" alt="randomVest">
                                     </div>
                                     <div class="whates-caption">
-                                        <h4><a href="{{ route('vest.single', ['slug' => $randomVesti[0]->slug]) }}">{{ $randomVesti[0]->naslov }}</a></h4>
-                                        <span>{{ $randomVesti[0]->datum}}</span>
-                                        <p>{{ Str::limit($randomVesti[0]->sazetak, 150) }}</p>
+                                        <h4><a href="{{ route('vest.single', ['slug' => $popularneVesti[0]->slug]) }}">{{ $popularneVesti[0]->naslov }}</a></h4>
+                                        <span>{{ $popularneVesti[0]->datum}}</span>
+                                        <p>{{ Str::limit($popularneVesti[0]->sazetak, 150) }}</p>
                                     </div>
                                 </div>
                             </div>
