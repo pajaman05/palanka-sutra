@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kategorija;
 use App\Models\Vest;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 
 class KategorijaController extends Controller
 {
@@ -19,31 +20,19 @@ class KategorijaController extends Controller
 
 
 
-
-    // Funkcija za prikaz jedne kategorije i njenih vesti
-/*
     public function kategorija($slug)
     {
+        Paginator::useBootstrap();
         $kategorije = Kategorija::all();
         $kategorija = Kategorija::where('slug', $slug)->firstOrFail();
+        $vesti = $kategorija->vesti()->paginate(3);
 
-        return view('kategorija.single', ['kategorija' => $kategorija, 'kategorije' => $kategorije]);
+        return view('kategorija.single', [
+            'kategorija' => $kategorija,
+            'kategorije' => $kategorije,
+            'vesti' => $vesti
+        ]);
     }
-*/
-
-
-   public function kategorija($slug)
-{
-    $kategorije = Kategorija::all();
-    $kategorija = Kategorija::where('slug', $slug)->firstOrFail();
-    $vesti = $kategorija->vesti()->paginate(3);
-
-    return view('kategorija.single', [
-        'kategorija' => $kategorija,
-        'kategorije' => $kategorije,
-        'vesti' => $vesti
-    ]);
-}
 
 
 

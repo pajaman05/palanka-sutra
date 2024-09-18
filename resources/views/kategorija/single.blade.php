@@ -4,73 +4,116 @@
 <!-- Header sections -->
 @include('partials.header-sections')
 
-<!-- Main sections -->
-@section('lista_kategorija')
-<div class="justify-content-between align-items-end mb-15">
-    <div class="col-xl-6">
-        <div class="section-tittle mb-30">
-            <h3>Nevesti Palanke</h3>
-        </div>
-    </div>
-    <div class="col-xl-12 col-md-12">
-        <div class="properties__button">
-            <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    @foreach($kategorije as $kategorija)
-                        <a class="nav-item nav-link {{ $kategorija->slug == request()->slug ? 'active' : '' }}" 
-                           href="{{ route('kategorija.single', ['slug' => $kategorija->slug]) }}"
-                           role="tab" 
-                           aria-controls="nav-{{ $kategorija->slug }}" 
-                           aria-selected="{{ $kategorija->slug == request()->slug ? 'true' : 'false' }}">
-                           {{ $kategorija->naziv }}
-                        </a>
-                    @endforeach
+
+
+<!-- Main sekcija -->
+@section('content')
+
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+
+    <!-- jos malo css-a -->
+    <style>
+        .pagination .page-item.active .page-link {
+            background-color: #dd3848;
+            border-color: #000000;
+        }
+
+        .pagination .page-link {
+            border-color: #000000;
+            color: black
+        }
+
+        .pagination .page-link:hover {
+            background-color: #b83c3c94;
+            border-color: #000000;
+            color: white;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+<div class="about-area2 gray-bg pt-60 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 whats-news-wrapper">
+                <div class="row">
+                    <div class="justify-content-between align-items-end mb-15">
+                        <div class="col-xl-6">
+                            <div class="section-tittle mb-30">
+                                <h3>{{ $kategorija->naziv }}</h3>
+                            </div>
+                        </div>
+
+                        <!-- Kategorije -->
+                        <div class="col-xl-12 col-md-12">
+                            <div class="properties__button">
+                                <nav>
+                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                        @foreach($kategorije as $kat)
+                                            <a class="nav-item nav-link {{ $kat->slug == request()->slug ? 'active' : '' }}" 
+                                               href="{{ route('kategorija.single', ['slug' => $kat->slug]) }}" 
+                                               role="tab" 
+                                               aria-controls="nav-{{ $kat->slug }}" 
+                                               aria-selected="{{ $kat->slug == request()->slug ? 'true' : 'false' }}">
+                                                {{ $kat->naziv }}
+                                            </a>
+                                        @endforeach
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </nav>
+
+                <!-- Vesti kategorija -->
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            @foreach($vesti as $vest)
+                                <li>
+                                    <h3>{{ $vest->naslov }}</h3>
+                                    <img src="{{ $vest->image_thumbnail }}" alt="{{ $vest->naslov }}">
+                                    <p>{!! $vest->sazetak !!}</p>
+                                    <p>Datum objave: {{ $vest->datum }}</p>
+                                    <a href="{{ route('vest.single', ['slug' => $vest->slug]) }}" 
+                                       style="display: inline-block; margin-top: 10px; margin-bottom: 20px; text-decoration: underline; color: black;">
+                                        Pročitaj više
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+
+                        <!-- Dinamička paginacija -->
+                        <div class="pagination">
+                            {{ $vesti->links() }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                @include('layouts.moj-template.partials.sidebar')
+            </div>
         </div>
     </div>
 </div>
 @endsection
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-@section('vesti')
-<div class="tab-content" id="nav-tabContent">
-    @foreach($kategorije as $kategorija)
-        <div class="tab-pane fade {{ $kategorija->slug == request()->slug ? 'show active' : '' }}" 
-             id="nav-{{ $kategorija->slug }}" 
-             role="tabpanel" 
-             aria-labelledby="nav-{{ $kategorija->slug }}-tab">
-
-            <ul>
-                @foreach($kategorija->vesti as $vest)
-                    <li>
-                        <h3>{{ $vest->naslov }}</h3>
-                        <img src="{{ $vest->image_thumbnail }}" alt="{{ $vest->naslov }}">
-                        <p>{!! $vest->sazetak !!}</p>
-                        <p>Datum objave: {{ $vest->datum }}</p>
-                        <a href="{{ route('vest.single', ['slug' => $vest->slug]) }}" style="display: inline-block; margin-top: 10px;margin-bottom: 20px; text-decoration: underline; color: black;">
-                            Pročitaj više
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
-        </div>
-    @endforeach
-</div>
-@endsection
 
 
 
@@ -136,6 +179,9 @@
     </span></a></li>
 
 @endsection
+
+
+
 
 <!-- Footer sections -->
 @include('partials.footer-sections')

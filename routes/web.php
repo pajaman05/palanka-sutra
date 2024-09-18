@@ -44,19 +44,18 @@ Route::get('/kategorija/{slug}', [KategorijaController::class, 'kategorija'])
 
 
 
-Route::post('/komentar/{vest_id}', [KomentarController::class, 'unesiKomentar'])->name('komentar.unesi');
+
 
 Route::get('/tim', [TimController::class, 'tim'])->name('tim');
 
 
-Route::get('/vest/create', [VestController::class, 'novaVest'])->name('vest.create');
 
-// Nesto nije u redu, ili sa rutom ili sa kontrolerom, jer vesti ne stavlja u bazu
-Route::post('/vest/insert', [VestController::class, 'unosVest'])->name('vest.insert');
+Route::middleware('auth')->group(function () {
+    Route::get('/vest/create', [VestController::class, 'novaVest'])->name('vest.create');
+    Route::post('/vest/insert', [VestController::class, 'unosVest'])->name('vest.insert');
+    Route::post('/komentar/{vest_id}', [KomentarController::class, 'unesiKomentar'])->name('komentar.unesi');
+});
 
-
-// mladenov insert smatra drugacijim iz nekog razloga??
-// Route::post('/vest/insert', [VestController::class, 'unosVest'])->name('vest.insert');
 
 Route::get('/vest/{id}', [VestController::class, 'vestById'])
     ->where('id', '[0-9]+')

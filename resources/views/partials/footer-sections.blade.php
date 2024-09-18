@@ -3,7 +3,7 @@
         <div class="single-footer-caption mb-30">
             <!-- logo -->
             <div class="footer-logo">
-                <a href="index.html"><img src="{{ asset('template/news-master/assets/img/logo/logo2_footer.png') }}" alt=""></a>
+                <a href="index.html"><img src="{{ asset('template/news-master/assets/img/logo/pravilogo.png') }}" alt=""  style="width: 200px; height: 200px;"></a>
             </div>
             <div class="footer-tittle">
                 <div class="footer-pera">

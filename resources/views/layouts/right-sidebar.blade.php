@@ -8,46 +8,7 @@
 
     <!-- MAIN -->
     <main>
-        <div class="about-area2 gray-bg pt-60 pb-60">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 whats-news-wrapper">
-                        
-                            <div class="row">
-                                @yield('lista_kategorija')
-                            </div>
-
-                            <div class="row">
-                                <div class="col-12">
-                                    @yield('vesti')
-                                </div>
-                            </div>
-                    </div>
-                    <div class="col-lg-4">  
-                        @include('layouts.moj-template.partials.sidebar')
-                    </div>
-                </div>
-            </div>
-    </div>
-
-
-
-        <!-- paginacija -->
-        <div class="pagination-area  gray-bg pb-45">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="single-wrap">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-start">
-                                    @yield('pagination')
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @yield('content')
     </main>
     
     
