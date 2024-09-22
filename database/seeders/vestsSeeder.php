@@ -51,6 +51,7 @@ class vestsSeeder extends Seeder
             'image_full' => "slike/vest-2-full.PNG",
             'kategorija_id' => 2,
             'user_id' => 3,
+           // 'lokacija' => htmlspecialchars('<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22840.835196647025!2d20.749434828758236!3d44.30780422954146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4750cb82d6903733%3A0x550731144cc52426!2sMINI%20FARMA%20%C4%90UKI%C4%86%20KLOKA!5e0!3m2!1ssr!2srs!4v1727012183171!5m2!1ssr!2srs\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>'),
             'published' => true,
             'accepted' => true,
             //`hits` => 0,

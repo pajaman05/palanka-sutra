@@ -53,7 +53,14 @@
 
                     <!-- Sidebar -->
                     <div class="col-lg-4">  
+
                         @include('layouts.moj-template.partials.sidebar')
+
+
+                        @if($vest->lokacija)
+                            {!! $vest->lokacija !!}
+                        @endif
+
                     </div>
             
 

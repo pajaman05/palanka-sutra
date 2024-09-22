@@ -112,6 +112,10 @@ class VestController extends Controller
             $vest->user_id = Auth::id();
             $vest->published = false;
             $vest->accepted = null;
+            if($request->has('lokacija')) {
+                $vest->lokacija = str_replace('width = "600"', 'height = "100%"', $request->lokacija);
+            }
+            
     
 
             $vest->image_thumbnail = 'placeholder-thumbnail.jpg';

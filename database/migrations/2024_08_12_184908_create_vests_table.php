@@ -31,9 +31,10 @@ return new class extends Migration
             $table->text('sadrzaj');
             $table->string('image_thumbnail', 200);
             $table->string('image_full', 200);
-            $table->unsignedBigInteger('kategorija_id');  // Change to unsignedBigInteger
-            $table->unsignedBigInteger('user_id');        // Change to unsignedBigInteger
+            $table->unsignedBigInteger('kategorija_id'); 
+            $table->unsignedBigInteger('user_id');       
             //$table->unsignedBigInteger('hits');
+            $table->string('lokacija', 600)->nullable();  // dodata kolona mapa na vest
             $table->boolean('published');
             $table->boolean('accepted')->nullable();
             $table->foreign('kategorija_id')->references('id')->on('kategorijas');

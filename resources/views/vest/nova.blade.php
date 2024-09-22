@@ -54,6 +54,11 @@
                 </div>
                 <div class="col-12">
                     <div class="form-group">
+                        <input class="form-control" name="lokacija" id="lokacija" type="text" placeholder="Lokacija" value="{{ old('lokacija') }}">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
                         <label for="kategorija_id">Kategorija:</label>
                         <br>
                         <select class="form-control" name="kategorija_id" id="kategorija_id">
