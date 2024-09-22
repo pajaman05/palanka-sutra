@@ -6,6 +6,7 @@ use App\Http\Controllers\KategorijaController;
 use App\Http\Controllers\KomentarController;
 use App\Http\Controllers\TimController;
 use App\Http\Controllers\VestController;
+use App\Http\Middleware\JeUrednik;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -56,6 +57,16 @@ Route::middleware('auth')->group(function () {
     Route::post('/komentar/{vest_id}', [KomentarController::class, 'unesiKomentar'])->name('komentar.unesi');
 });
 
+
+/*
+middleware za urednika testing - RADI
+
+Route::middleware(JeUrednik::class)->group(function () {
+    Route::get('/vest/create', [VestController::class, 'novaVest'])->name('vest.create');
+    Route::post('/vest/insert', [VestController::class, 'unosVest'])->name('vest.insert');
+    Route::post('/komentar/{vest_id}', [KomentarController::class, 'unesiKomentar'])->name('komentar.unesi');
+});
+*/
 
 Route::get('/vest/{id}', [VestController::class, 'vestById'])
     ->where('id', '[0-9]+')
