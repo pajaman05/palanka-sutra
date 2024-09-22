@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KategorijaController;
 use App\Http\Controllers\TimController;
 use App\Http\Controllers\VestController;
+use App\Http\Controllers\SponzorController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -47,6 +48,7 @@ Route::post('/komentar/{vest_id}', [VestController::class, 'unesiKomentar'])->na
 
 Route::get('/tim', [TimController::class, 'tim'])->name('tim');
 
+Route::get('/sponzori', [SponzorController::class, 'sponzori'])->name('sponzori');
 
 Route::get('/vest/create', [VestController::class, 'novaVest'])->name('vest.create');
 

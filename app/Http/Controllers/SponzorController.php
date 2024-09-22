@@ -7,13 +7,13 @@ use App\Models\Sponzor;
 
 class SponzorController extends Controller
 {
-    public function page()
+    public function sponzori()
     {
-        // Pretpostavimo da želimo da prikažemo sve sponzore
+        // Zelimo da prikažemo sve sponzore
         $sponzori = Sponzor::all();
 
-        // Vraćamo pogled 'sponzor.page' sa podacima o sponzorima
-        return view('sponzor.page', ['sponzori' => $sponzori]);
+        // Vraćamo view 'sponzors.single' sa informacijama o sponzorima
+        return view('sponzors.single', ['sponzori' => $sponzori]);
     }
 }
 
