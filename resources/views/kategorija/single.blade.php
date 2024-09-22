@@ -2,7 +2,6 @@
 
 
 
-
 <!-- Main sekcija -->
 @section('content')
 
@@ -176,6 +175,7 @@
     </span></a></li>
 
 @endsection
+
 
 
 

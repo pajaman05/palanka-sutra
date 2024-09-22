@@ -44,8 +44,8 @@
             <div class="header-bottom header-sticky">
                 <div class="container">
                     <div class="row align-items-center">
+                        <!-- Navigation -->
                         <div class="col-xl-8 col-lg-8 col-md-12 header-flex">
-                            <!-- Navigation -->
                             <!-- sticky -->
                             <div class="sticky-logo">
                                 <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
