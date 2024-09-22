@@ -1,35 +1,32 @@
 @extends('layouts.right-sidebar')
 
 
-<!-- Header sections -->
-@include('partials.header-sections')
-
 <!-- Main sections -->
 @section('lista_kategorija')
-<div class="justify-content-between align-items-end mb-15">
-    <div class="col-xl-6">
-        <div class="section-tittle mb-30">
-            <h3>Nevesti Palanke</h3>
+    <div class="justify-content-between align-items-end mb-15">
+        <div class="col-xl-6">
+            <div class="section-tittle mb-30">
+                <h3>Nevesti Palanke</h3>
+            </div>
+        </div>
+        <div class="col-xl-12 col-md-12">
+            <div class="properties__button">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        @foreach($kategorije as $kategorija)
+                            <a class="nav-item nav-link {{ $kategorija->slug == request()->slug ? 'active' : '' }}" 
+                            href="{{ route('kategorija.single', ['slug' => $kategorija->slug]) }}"
+                            role="tab" 
+                            aria-controls="nav-{{ $kategorija->slug }}" 
+                            aria-selected="{{ $kategorija->slug == request()->slug ? 'true' : 'false' }}">
+                            {{ $kategorija->naziv }}
+                            </a>
+                        @endforeach
+                    </div>
+                </nav>
+            </div>
         </div>
     </div>
-    <div class="col-xl-12 col-md-12">
-        <div class="properties__button">
-            <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    @foreach($kategorije as $kategorija)
-                        <a class="nav-item nav-link {{ $kategorija->slug == request()->slug ? 'active' : '' }}" 
-                           href="{{ route('kategorija.single', ['slug' => $kategorija->slug]) }}"
-                           role="tab" 
-                           aria-controls="nav-{{ $kategorija->slug }}" 
-                           aria-selected="{{ $kategorija->slug == request()->slug ? 'true' : 'false' }}">
-                           {{ $kategorija->naziv }}
-                        </a>
-                    @endforeach
-                </div>
-            </nav>
-        </div>
-    </div>
-</div>
 @endsection
 
 
@@ -47,29 +44,29 @@
 
 
 @section('vesti')
-<div class="tab-content" id="nav-tabContent">
-    @foreach($kategorije as $kategorija)
-        <div class="tab-pane fade {{ $kategorija->slug == request()->slug ? 'show active' : '' }}" 
-             id="nav-{{ $kategorija->slug }}" 
-             role="tabpanel" 
-             aria-labelledby="nav-{{ $kategorija->slug }}-tab">
+    <div class="tab-content" id="nav-tabContent">
+        @foreach($kategorije as $kategorija)
+            <div class="tab-pane fade {{ $kategorija->slug == request()->slug ? 'show active' : '' }}" 
+                id="nav-{{ $kategorija->slug }}" 
+                role="tabpanel" 
+                aria-labelledby="nav-{{ $kategorija->slug }}-tab">
 
-            <ul>
-                @foreach($kategorija->vesti as $vest)
-                    <li>
-                        <h3>{{ $vest->naslov }}</h3>
-                        <img src="{{ $vest->image_thumbnail }}" alt="{{ $vest->naslov }}">
-                        <p>{!! $vest->sazetak !!}</p>
-                        <p>Datum objave: {{ $vest->datum }}</p>
-                        <a href="{{ route('vest.single', ['slug' => $vest->slug]) }}" style="display: inline-block; margin-top: 10px;margin-bottom: 20px; text-decoration: underline; color: black;">
-                            Pročitaj više
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
-        </div>
-    @endforeach
-</div>
+                <ul>
+                    @foreach($kategorija->vesti as $vest)
+                        <li>
+                            <h3>{{ $vest->naslov }}</h3>
+                            <img src="{{ $vest->image_thumbnail }}" alt="{{ $vest->naslov }}">
+                            <p>{!! $vest->sazetak !!}</p>
+                            <p>Datum objave: {{ $vest->datum }}</p>
+                            <a href="{{ route('vest.single', ['slug' => $vest->slug]) }}" style="display: inline-block; margin-top: 10px;margin-bottom: 20px; text-decoration: underline; color: black;">
+                                Pročitaj više
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        @endforeach
+    </div>
 @endsection
 
 
@@ -137,8 +134,6 @@
 
 @endsection
 
-<!-- Footer sections -->
-@include('partials.footer-sections')
 
 
 

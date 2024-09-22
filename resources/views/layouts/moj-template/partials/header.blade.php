@@ -25,7 +25,19 @@
                 <div class="container">
                     <div class="row d-flex align-items-center">
                         <!-- Logo and banner-->
-                        @yield('logo-banner')
+                        <!-- Logo -->
+                        <div class="col-xl-3 col-lg-3 col-md-3 d-none d-md-block">
+                            <div class="logo">
+                                <a href="index.html"><img src="/template/news-master/assets/img/logo/logo.png" alt=""></a>
+                            </div>
+                        </div>
+
+                        <!-- Header Banner -->
+                        <div class="col-xl-9 col-lg-9 col-md-9">
+                            <div class="header-banner f-right ">
+                                <img src="/template/news-master/assets/img/gallery/header_card.png" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -33,7 +45,30 @@
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-xl-8 col-lg-8 col-md-12 header-flex">
-                            @yield('navigation')
+                            <!-- Navigation -->
+                            <!-- sticky -->
+                            <div class="sticky-logo">
+                                <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                            </div>
+                            <!-- Main-menu -->
+                            <div class="main-menu d-none d-md-block">
+                                <nav>                  
+                                    <ul id="navigation">
+                                        <li><a href="{{route('homepage')}}">Početna</a></li>
+                                        <li><a href="{{route('tim')}}">Naš tim</a></li>
+                                        <li><a href="{{route('kategorija.list')}}">Kategorije</a></li>
+                                        <li><a href="latest_news.html">Predviđanja</a></li>
+                                        <li><a href="#">Stranice</a>
+                                            <ul class="submenu">
+                                                <li><a href="blog.html">Blog</a></li>
+                                                <li><a href="blog_details.html">Blog Details</a></li>
+                                                <li><a href="elements.html">Element</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">Kontakt</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>             
                         <div class="col-xl-4 col-lg-4 col-md-4">
                             <div class="header-right f-right d-none d-lg-block">
@@ -59,7 +94,7 @@
                         @if(auth()->user()->tip === 'admin') <!-- Check if 'tip' is 'admin' -->
                             <div class="row align-items-center">
                                 <div class="col-xl-12 col-lg-12 col-md-12 header-flex">
-                                    @yield('admin-navigation')
+                                    @include('layouts.moj-template.partials.admin-navigation')
                                 </div>
                             </div>
                         @endif

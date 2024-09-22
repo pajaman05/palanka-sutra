@@ -4,8 +4,6 @@
     {{$randomVesti[0]->naslov}}
 @endsection
 
-@include('partials.header-sections')
-
 @section('trending-slider')
     <div class="slider-active">
         @foreach($vesti as $vest)
@@ -471,5 +469,3 @@
         <img src="{{ asset('template/news-master/assets/img/gallery/body_card3.png') }}" alt="">
     </div>
 @endsection
-
-@include('partials.footer-sections')

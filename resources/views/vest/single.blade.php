@@ -1,8 +1,6 @@
 @extends('layouts.right-sidebar')
 
 
-<!-- Header sections -->
-@include('partials.header-sections')
 
 <!-- Main sections -->
 @section('vesti')
@@ -24,9 +22,6 @@
 </div>
 @endsection
 
-
-<!-- Footer sections -->
-@include('partials.footer-sections')
 
 
 

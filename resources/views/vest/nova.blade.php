@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 @extends('layouts.full-width')
 
-<!-- Header sections -->
-@include('partials.header-sections')
 
 <!-- Main sections -->
 @section('content-2')
@@ -71,8 +69,6 @@
 
 
 
-<!-- Footer sections -->
-@include('partials.footer-sections')
 
 
 
