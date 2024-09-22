@@ -8,6 +8,7 @@ use App\Http\Controllers\TimController;
 use App\Http\Controllers\VestController;
 use App\Http\Controllers\SponzorController;
 use App\Http\Middleware\JeUrednik;
+use App\Http\Controllers\AdminController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -75,3 +76,11 @@ Route::get('/vest/{id}', [VestController::class, 'vestById'])
     ->name('vest.singleById');
 Route::get('/vest/{slug}', [VestController::class, 'vest'])
     ->name('vest.single');
+
+//Ruta za middleware admina
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])
+        ->name('admin.dashboard');
+    //Ostale admin rute ovde
+});
+    
