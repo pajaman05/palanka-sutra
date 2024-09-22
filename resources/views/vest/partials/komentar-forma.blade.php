@@ -1,12 +1,5 @@
 <div class="row" style="padding-top: 50px;">
     <div class="col-lg-8">
-        <div>
-            @if(session()->has('message'))
-            <div class="alert alert-success">
-                {{session()->get('message')}}
-            </div>
-            @endif
-        </div>
         <form action="{{ route('komentar.unesi', ['vest_id' => $vest->id]) }}" method="POST">
             @csrf
         
