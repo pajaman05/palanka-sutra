@@ -112,9 +112,13 @@ class VestController extends Controller
             $vest->user_id = Auth::id();
             $vest->published = false;
             $vest->accepted = null;
-            if($request->has('lokacija')) {
-                $vest->lokacija = str_replace('width = "600"', 'height = "100%"', $request->lokacija);
+
+            // ovo da se popravi da isece mapu kako treba
+            if ($request->has('lokacija')) {
+                $vest->lokacija = $request->lokacija;
             }
+            
+            
             
     
 

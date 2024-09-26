@@ -45,10 +45,8 @@
 
 
 
-<div class="about-area2 gray-bg pt-60 pb-60">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 whats-news-wrapper">
+        @section('content')
+            <div class="whats-news-wrapper">
                 <div class="row">
                     <div class="justify-content-between align-items-end mb-15">
                         <div class="col-xl-6">
@@ -57,6 +55,7 @@
                             </div>
                         </div>
 
+                        
                         <!-- Kategorije -->
                         <div class="col-xl-12 col-md-12">
                             <div class="properties__button">
@@ -103,15 +102,14 @@
                     </div>
                 </div>
             </div>
+            @endsection
+
+
 
             <!-- Sidebar -->
-            <div class="col-lg-4">
+            @section('sidebar')
                 @include('layouts.moj-template.partials.sidebar')
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+            @endsection
 
 
 
