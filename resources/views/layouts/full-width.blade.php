@@ -10,7 +10,8 @@
             <div class="about-details section-padding30">
                 <div class="container">
                     <div class="row">
-                        <div class="offset-xl-1 col-lg-8">
+                        <!-- lg-8 u lg-12 stavljeno -->
+                        <div class="offset-xl-1 col-lg-12">
                             @yield('content-1')
                         </div>
                     </div>
