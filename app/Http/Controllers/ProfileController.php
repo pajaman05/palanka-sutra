@@ -9,17 +9,24 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
+use App\Models\User;
+
 class ProfileController extends Controller
 {
-    /**
-     * Display the user's profile form.
-     */
+    /*
+
+     
     public function edit(Request $request): View
     {
         return view('profile.edit', [
             'user' => $request->user(),
         ]);
     }
+*/
+
+
+
+
 
     /**
      * Update the user's profile information.
@@ -37,9 +44,40 @@ class ProfileController extends Controller
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
-    /**
-     * Delete the user's account.
-     */
+
+
+
+
+
+
+
+    // metoda za brisanje kroz crud tabelu
+    public function destroy($id)
+    {
+        $korisnik = User::findOrFail($id);
+        $korisnik->delete();
+    }
+
+
+    public function edit($id)
+    {
+        $user = User::findOrFail($id);
+        return view('crud.edits.users', compact('user'))->render();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     public function destroy(Request $request): RedirectResponse
     {
         $request->validateWithBag('userDeletion', [
@@ -57,4 +95,6 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
+    */
 }

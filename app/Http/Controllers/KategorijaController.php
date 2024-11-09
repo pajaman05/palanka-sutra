@@ -63,6 +63,25 @@ class KategorijaController extends Controller
 
 
 
+
+        // Brisanje kategorije iz baze (destroy metoda)
+        public function destroy($id)
+        {
+            $kategorija = Kategorija::findOrFail($id);
+            $kategorija->delete();
+        }
+
+
+
+
+
+
+
+
+
+        
+
+
     // Ažuriranje kategorije u bazi (update metoda)
     public function update(Request $request, $id)
     {
@@ -77,19 +96,6 @@ class KategorijaController extends Controller
 
         return redirect()->route('kategorijas.index')
                          ->with('success', 'Kategorija uspešno ažurirana.');
-    }
-
-
-
-
-    // Brisanje kategorije iz baze (destroy metoda)
-    public function destroy($id)
-    {
-        $kategorija = Kategorija::findOrFail($id);
-        $kategorija->delete();
-
-        return redirect()->route('kategorijas.index')
-                         ->with('success', 'Kategorija uspešno obrisana.');
     }
 
 

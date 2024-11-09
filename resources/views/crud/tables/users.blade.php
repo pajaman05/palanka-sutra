@@ -18,11 +18,17 @@
                 <td>{{ $user->tip }}</td>
                 <td>{{ $user->remember_token ? 'True' : 'False' }}</td>
                 <td>
-                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                    <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
+                    <button class="btn btn-sm edit-btn" 
+                            data-table="users" 
+                            data-id="{{ $user->id }}">
+                        Edit
+                    </button>
+
+
+                    <form action="{{ route('users.destroy', $user->id) }}" method="POST" class="delete-form" style="display:inline;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-sm">Delete</button>
                     </form>
                 </td>
             </tr>
@@ -31,4 +37,4 @@
 </table>
 
 
-<a href="{{ route('users.create') }}" class="btn btn-success mb-3">Dodaj Novog Korisnika</a>
+<a href="{{ route('users.create') }}" class="btn btn-sm mb-3">Dodaj Novog Korisnika</a>

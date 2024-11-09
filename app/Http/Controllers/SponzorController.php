@@ -15,5 +15,20 @@ class SponzorController extends Controller
         // Vraćamo pogled 'sponzor.page' sa podacima o sponzorima
         return view('sponzor.page', ['sponzori' => $sponzori]);
     }
+
+
+
+    public function edit($id)
+    {
+        $sponzori = Sponzor::findOrFail($id);
+        return view('crud.edits.sponzors', compact('sponzori'))->render();
+    }
+
+
+    public function destroy($id)
+    {
+        $sponzor = Sponzor::findOrFail($id);
+        $sponzor->delete();
+    }
 }
 

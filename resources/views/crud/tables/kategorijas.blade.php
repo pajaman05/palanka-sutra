@@ -16,17 +16,21 @@
                 <td>{{ $kategorija->slug }}</td>
                 <td>{{ $kategorija->opis }}</td>
                 <td>
-                    <button class="btn btn-sm btn-warning edit-btn" 
+
+                    <button class="btn btn-sm edit-btn" 
                             data-table="kategorijas" 
                             data-id="{{ $kategorija->id }}">
                         Edit
                     </button>
                     
-                    <form action="{{ route('kategorijas.destroy', $kategorija->id) }}" method="POST" style="display:inline;">
+                    
+                    <form action="{{ route('kategorijas.destroy', $kategorija->id) }}" method="POST" class="delete-form" style="display:inline;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-sm">Delete</button>
                     </form>
+                    
+
                 </td>
             </tr>
         @endforeach
@@ -34,5 +38,5 @@
 </table>
 
 
-<!-- Dodaj dugme za kreiranje kategorije -->
-<a href="{{ route('kategorijas.create') }}" class="btn btn-success mb-3">Dodaj Novu Kategoriju</a>
+
+<a href="{{ route('kategorijas.create') }}" class="btn btn-sm mb-3">Dodaj Novu Kategoriju</a>

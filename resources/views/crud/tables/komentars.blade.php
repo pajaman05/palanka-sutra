@@ -14,16 +14,24 @@
                 <td>{{ $komentar->datum }}</td>
                 <td>{{ $komentar->sadrzaj }}</td>
                 <td>
-                    <a href="{{ route('komentars.edit', $komentar->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                    <form action="{{ route('komentars.destroy', $komentar->id) }}" method="POST" style="display:inline;">
+                    <button class="btn btn-sm edit-btn" 
+                            data-table="komentars" 
+                            data-id="{{ $komentar->id }}">
+                        Edit
+                    </button>
+
+
+                    <form action="{{ route('komentars.destroy', $komentar->id) }}" method="POST" class="delete-form" style="display:inline;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-sm">Delete</button>
                     </form>
+                    
+
                 </td>
             </tr>
         @endforeach
     </tbody>
 </table>
 
-<a href="{{ route('komentars.create') }}" class="btn btn-success mb-3">Dodaj Nov Komentar</a>
+<a href="{{ route('komentars.create') }}" class="btn btn-sm mb-3">Dodaj Nov Komentar</a>

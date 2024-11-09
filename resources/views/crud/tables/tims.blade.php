@@ -2,6 +2,7 @@
     <thead>
         <tr>
             <th>ID</th>
+            <th>Naziv</th>
             <th>Opis</th>
             <th>Slika</th>
             <th>Actions</th> <!-- Optional: Add action buttons for edit/delete -->
@@ -11,20 +12,31 @@
         @foreach($data as $tim)
             <tr>
                 <td>{{ $tim->id }}</td>
+                <td>{{ $tim->naziv }}</td>
                 <td>{{ $tim->opis }}</td>
                 <td>
                     @if($tim->slika)
-                        <img src="{{ asset('storage/' . $tim->slika) }}" alt="Slika tima" style="width: 100px; height: auto;">
+                        <!-- provera da li je slika link ili fajl, lepa stvar -->
+                        @if(Str::startsWith($tim->slika, ['http://', 'https://']))
+                            <img src="{{ $tim->slika }}" alt="{{ $tim->naziv }}" width="100">
+                        @else
+                            <img src="{{ asset($tim->slika) }}" alt="{{ $tim->naziv }}" width="100">
+                        @endif
                     @else
-                        No image
+                        Nema slike
                     @endif
                 </td>
                 <td>
-                    <a href="{{ route('tims.edit', $tim->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                    <form action="{{ route('tims.destroy', $tim->id) }}" method="POST" style="display:inline;">
+                     <button class="btn btn-sm edit-btn" 
+                            data-table="tims" 
+                            data-id="{{ $tim->id }}">
+                        Edit
+                    </button>
+
+                    <form action="{{ route('tims.destroy', $tim->id) }}" method="POST" class="delete-form" style="display:inline;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-sm">Delete</button>
                     </form>
                 </td>
             </tr>
@@ -33,4 +45,4 @@
 </table>
 
 
-<a href="{{ route('tims.create') }}" class="btn btn-success mb-3">Dodaj Novog Clana Tima</a>
+<a href="{{ route('tims.create') }}" class="btn btn-sm mb-3">Dodaj Novog Clana Tima</a>
